@@ -30,7 +30,7 @@
           <h2><%#: Eval("CompanyName")%><small> - <%#: Eval("Country")%></small></h2>
           <h3><%#: Eval("ContactName") %></h3>
           <p><%#: Eval("ContactTitle") %></p>
-          <p><a href="/Proveedores/ProveedorDetalle.aspx?id=<%#:Eval("SupplierID")%>" class="btn btn-default">Ver Detalle »</a></p>
+          <p><a href="/Proveedores/ProveedorDetalle.aspx?id=<%#:Eval("SupplierID")%>&proveedor=<%#: Eval("CompanyName") %>" class="btn btn-default">Ver Detalle »</a></p>
         </div>
        </ItemTemplate>
       <GroupTemplate>
