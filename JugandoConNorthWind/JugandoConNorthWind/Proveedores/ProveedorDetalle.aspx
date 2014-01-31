@@ -1,5 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProveedorDetalle.aspx.cs" Inherits="JugandoConNorthWind.Proveedores.ProveedorDetalle" %>
 
+
 <asp:Content ID="Head" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainPlaceHolder" runat="server">
@@ -14,7 +15,7 @@
               <div class="form-group">
                 <label for="inputCompanyName" class="col-lg-4 control-label">Nombre del Proveedor : </label>
                 <div class="col-lg-8">
-                  <input disabled runat="server" type="text" class="form-control" id="inputCompanyName" placeholder="Nombre">
+                  <input disabled runat="server" type="text" class="form-control" id="inputCompanyName" placeholder="Nombre" required />
                 </div>
               </div>
               <div class="form-group">
@@ -91,59 +92,8 @@
             </fieldset>
 
             <!--Modal Aviso Eliminar-->
-            <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-exclamation-sign"></span>   Mensaje de Advertencia</h4>
-                  </div>
-                  <div class="modal-body">
-                    Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo
-                    serán establecidos como articulos "Sin Proveedor". 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
-                    <asp:LinkButton runat="server" ID="btnEliminarProveedor" class="btn btn-primary btn-danger" OnClick="btnEliminarProveedor_Click">Eliminar Registro</asp:LinkButton>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--Modal No Eliminado-->
-            <div class="modal fade" id="modalNoEliminado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-                    <h4 class="modal-title" id="H1"><span class="glyphicon glyphicon-exclamation-sign"></span>   Mensaje de Advertencia</h4>
-                  </div>
-                  <div class="modal-body">
-                    Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente. 
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!--Modal Si Eliminado-->
-            <div class="modal fade" data-backdrop="static" id="modalEliminado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-              <div class="modal-dialog">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h4 class="modal-title" id="H2"><span class="glyphicon glyphicon-exclamation-sign"></span>   Mensaje de Advertencia</h4>
-                  </div>
-                  <div class="modal-body">
-                    Registro Eliminado Exitosamente.
-                  </div>
-                  <div class="modal-footer">
-                    <asp:LinkButton runat="server" ID="btnAceptarRedireccionar" class="btn btn-primary" OnClick="btnAceptarRedireccionar_Click">Aceptar</asp:LinkButton>
-                  </div>
-                </div>
-              </div>
-            </div>
+            <%@ Register Src="~/UsersControls/AvisoEliminarRegistroControl.ascx" TagPrefix="Control" TagName="AvisoEliminarRegistroControl" %>
+            <Control:AvisoEliminarRegistroControl runat="server" id="AvisoEliminarRegistroControl" />
 
           </form>
         </div>

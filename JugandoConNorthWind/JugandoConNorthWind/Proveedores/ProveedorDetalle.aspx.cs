@@ -21,6 +21,15 @@ namespace JugandoConNorthWind.Proveedores
 
         protected void Page_Load(object sender, EventArgs e)
         {
+            //Configurando UserControl Para los Modal de Mensajes de Eliminado
+            if (!IsPostBack)
+            {
+                AvisoEliminarRegistroControl.UserControlButtonClicked += new EventHandler(btnEliminar_Click);
+                AvisoEliminarRegistroControl.EliminadoRetornoURLEvent += new EventHandler(btnRedireccionar);
+                AvisoEliminarRegistroControl.mensaje = "Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo serán establecidos como articulos 'Sin Proveedor'";
+                AvisoEliminarRegistroControl.mensajeNoEliminado = "Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente.";
+                AvisoEliminarRegistroControl.mesajeEliminado = "Registro Eliminado Exitosamente.";
+            }
             //Recuperando el Id de la URL 
             IdDelProveedor = Request.QueryString["id"] ?? "-1";
             if (IdDelProveedor == "-1")
@@ -69,18 +78,17 @@ namespace JugandoConNorthWind.Proveedores
             return conversionExitosa;
         }
 
-        protected void btnEliminarProveedor_Click(object sender, EventArgs e)
+        protected void btnRedireccionar(object sender, EventArgs e)
         {
+            Response.Redirect("~/Proveedores/Proveedores.aspx");
+        }
+
+        protected void btnEliminar_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Debug.WriteLine("Hola Mundo");
             EjecutarModel.Text = !_pRepo.RemoverProveedor(int.Parse(IdDelProveedor)) ?
                                   "<script>$('#modalNoEliminado').modal('toggle')</script>" :
                                   "<script>$('#modalEliminado').modal('toggle')</script>";
-
-            
-        }
-
-        protected void btnAceptarRedireccionar_Click(object sender, EventArgs e)
-        {
-            Response.Redirect("~/Proveedores/Proveedores.aspx");
         }
 
 

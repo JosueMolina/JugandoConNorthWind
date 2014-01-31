@@ -130,22 +130,13 @@ namespace JugandoConNorthWind.Proveedores {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputHomePage;
         
         /// <summary>
-        /// Control btnEliminarProveedor.
+        /// Control AvisoEliminarRegistroControl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnEliminarProveedor;
-        
-        /// <summary>
-        /// Control btnAceptarRedireccionar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnAceptarRedireccionar;
+        protected global::JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl AvisoEliminarRegistroControl;
         
         /// <summary>
         /// Control EjecutarModel.
