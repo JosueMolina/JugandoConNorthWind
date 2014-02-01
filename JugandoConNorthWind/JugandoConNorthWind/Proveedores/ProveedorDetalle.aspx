@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProveedorDetalle.aspx.cs" Inherits="JugandoConNorthWind.Proveedores.ProveedorDetalle" %>
+﻿<%@ Page  MaintainScrollPositionOnPostback="true" Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProveedorDetalle.aspx.cs" Inherits="JugandoConNorthWind.Proveedores.ProveedorDetalle" %>
 
 
 <asp:Content ID="Head" ContentPlaceHolderID="HeadContent" runat="server">
@@ -9,7 +9,7 @@
     <div class="row">
       <div class="col-md-8">
         <div class="well">
-          <form id="formulario" runat="server" class="form-horizontal">
+          <form runat="server" id="formulario" class="form-horizontal">
             <fieldset>
               <legend>Detalle del Proveedor</legend>
               <div class="form-group">
@@ -75,22 +75,23 @@
               <div class="form-group">
                 <label for="inputHomePage" class="col-lg-4 control-label">Web Site : </label>
                 <div class="col-lg-8">
-                  <input disabled runat="server" type="text" class="form-control" id="inputHomePage" placeholder="Web Site">
+                  <input disabled runat="server" type="text" title="Proporciona una URL" pattern="(http|https)//:.+" class="form-control" id="inputHomePage" placeholder="Web Site">
                 </div>
               </div>
               <div class="col-lg-8 col-lg-offset-4">
                 <div id="Guardar-Cancelar">
-                  <a href="#" class="btn btn-default btn-primary btn-info" id="A1">Guardar</a>
-                  <a href="#" class="btn btn-primary" id="btnCancelar">Cancelar</a>
+                  <asp:LinkButton runat="server" class="btn btn-default btn-primary btn-info" id="btnGuardar" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
+                  <a href="#" class="btn btn-primary" runat="server" id="btnCancelar">Cancelar</a>
+                  <button type="submit" id="btnSubmit">Submit</button>
                 </div>
                 <div id="Editar-Eliminar">
-                  <a href="#" class="btn btn-default btn-primary btn-info" id="btnEditar">Editar</a>
-                  <a href="#" data-toggle="modal" data-target="#myModal" class="btn btn-default btn-primary btn-danger" id="btnEliminar">Eliminar</a>
-                  <a href="/Proveedores/Proveedores.aspx" class="btn btn-primary">Proveedores</a>
+                  <a class="btn btn-default btn-primary btn-info" runat="server" id="btnEditar">Editar</a>
+                  <a data-toggle="modal" data-target="#myModal" class="btn btn-default btn-primary btn-danger" runat="server" id="btnEliminar">Eliminar</a>
+                  <a href=" /Proveedores/Proveedores.aspx" class="btn btn-primary" runat="server" id="btnProveedores">Proveedores</a>
                 </div>
               </div>
             </fieldset>
-
+            <asp:PlaceHolder runat="server" ID="phMensajeErrorEditar" /> 
             <!--Modal Aviso Eliminar-->
             <%@ Register Src="~/UsersControls/AvisoEliminarRegistroControl.ascx" TagPrefix="Control" TagName="AvisoEliminarRegistroControl" %>
             <Control:AvisoEliminarRegistroControl runat="server" id="AvisoEliminarRegistroControl" />
@@ -103,6 +104,8 @@
 
   <script src="../Scripts/jquery-1.8.2.min.js"></script>
   <script src="../Scripts/Bootstrap/bootstrap.min.js"></script>
+  <script src="../Scripts/Plugins/jquery.validate.js"></script>
+  <script src="../Scripts/Plugins/additional-methods.js"></script>
   <script src="../Scripts/CustomScripts/custom.js"></script>
 
   <asp:Literal ID="EjecutarModel" runat="server" />

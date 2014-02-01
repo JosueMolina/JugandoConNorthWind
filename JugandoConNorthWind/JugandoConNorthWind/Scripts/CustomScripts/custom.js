@@ -1,9 +1,11 @@
 ﻿(function ($, Window, undefined) {
 
-    var $botonEditar = $("#btnEditar"),
-        $botonEliminar = $("#btnEliminar"),
-        $botonGuardar = $("#btnGuardar"),
-        $botonCancelar = $("#btnCancelar"),
+    
+
+    var $botonEditar = $("#MainPlaceHolder_btnEditar"),
+        $botonEliminar = $("#MainPlaceHolder_btnEliminar"),
+        $botonGuardar = $("#MainPlaceHolder_btnGuardar"),
+        $botonCancelar = $("#MainPlaceHolder_btnCancelar"),
         $botonesEditando = $("#Guardar-Cancelar").css("display", "none"),
         $botonesOpciones = $("#Editar-Eliminar");
 
@@ -15,18 +17,24 @@
         });
     });
 
+    $botonGuardar.on("click", function (e) {
+        $("#btnSubmit").trigger("click");
+        var form = $("#formulario");
+        form.validate();
+        console.log(form.valid());
+        if (!form.valid())
+        {
+            e.preventDefault();
+        }
+        
+    });
+
     $botonCancelar.on("click", function (e) {
         e.preventDefault();
+
         $("input").attr("disabled", true);
         $botonesEditando.fadeOut(200, function () {
             $botonesOpciones.fadeIn(200);
         });
     });
-
-    $("#btnEliminarProveedor").on("click", function (e) {
-        console.log("Hola Mundo");
-        e.preventDefault();
-    });
-
-
 })(jQuery, Window, undefined);

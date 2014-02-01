@@ -42,7 +42,7 @@
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
-        <h4 class="modal-title" id="H2"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Advertencia</h4>
+        <h4 class="modal-title" id="H2"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Información</h4>
       </div>
       <div class="modal-body">
         <%: this.mesajeEliminado %>
@@ -53,5 +53,7 @@
     </div>
   </div>
 </div>
+
+
 
 

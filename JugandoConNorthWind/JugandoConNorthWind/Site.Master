@@ -6,8 +6,9 @@
   <meta charset="utf-8" />
   <title><%: @Page.Title%> - Jugando Con NorthWind</title>
    <asp:ContentPlaceHolder runat="server" ID="HeadContent" />
-  <webopt:BundleReference runat="server" path="~/Content/" />
+  <%--<webopt:BundleReference runat="server" path="~/Content/" />--%>
   <link href="//netdna.bootstrapcdn.com/bootswatch/3.0.3/slate/bootstrap.min.css" rel="stylesheet">
+  <link href="Content/Styles/custom.css" rel="stylesheet" />
 </head>
 <body>
   <div class="jumbotron">

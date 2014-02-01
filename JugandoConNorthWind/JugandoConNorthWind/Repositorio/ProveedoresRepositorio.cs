@@ -3,24 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using JugandoConNorthWind.ModeloNorthWind;
+using JugandoConNorthWind.ClasesDTO;
 
 namespace JugandoConNorthWind.Repositorio
 {
     public class ProveedoresRepositorio
     {
-         protected NorthwindEntities _context;
-         public ProveedoresRepositorio(NorthwindEntities context)
+        protected NorthwindEntities _context;
+        public ProveedoresRepositorio(NorthwindEntities context)
         {
             _context = context;
         }
 
-         public IEnumerable<Suppliers> ListaProveedores()
+        public IEnumerable<Suppliers> ListaProveedores()
          {
              var proveedores = _context.Suppliers.Where(p => p.SupplierID != 30).ToList();
              return proveedores;
          }
 
-         public IEnumerable<Suppliers> BuscarProveedor(string text)
+        public IEnumerable<Suppliers> BuscarProveedor(string text)
          {
              var proveedores = _context.Suppliers.Where(p => p.CompanyName.Contains(text)).Where(p => p.SupplierID != 30).ToList();
              return proveedores;
@@ -45,7 +46,6 @@ namespace JugandoConNorthWind.Repositorio
 
             return proveedor;
         }
-
 
         public bool RemoverProveedor(int id)
         {
@@ -75,6 +75,36 @@ namespace JugandoConNorthWind.Repositorio
             }
 
             return removido;
+        }
+
+        public Suppliers EditarProveedor(int id, ProveedoresDTO proveedorDTO)
+        {
+            Suppliers proveedor = new Suppliers();
+            try
+            {
+                proveedor = ObtenerProveedor(id.ToString());
+                if (proveedor != null)
+                {
+                    proveedor.CompanyName = proveedorDTO.CompanyName;
+                    proveedor.ContactName = proveedorDTO.ContactName;
+                    proveedor.ContactTitle = proveedorDTO.ContactTitle;
+                    proveedor.Address = proveedorDTO.Address;
+                    proveedor.City = proveedorDTO.City;
+                    proveedor.Region = proveedorDTO.Region;
+                    proveedor.PostalCode = proveedorDTO.PostalCode;
+                    proveedor.Country = proveedorDTO.Country;
+                    proveedor.Phone = proveedorDTO.Phone;
+                    proveedor.Fax = proveedorDTO.Fax;
+                    proveedor.HomePage = proveedorDTO.HomePage;
+
+                    _context.SaveChanges();
+                }
+            }
+            catch (Exception)
+            {
+                
+            }
+            return proveedor;
         }
     }
 }

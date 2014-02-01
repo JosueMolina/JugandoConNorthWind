@@ -15,6 +15,7 @@ namespace JugandoConNorthWind.UsersControls
         public string mensaje { get; set; }
         public string mensajeNoEliminado { get; set; }
         public string mesajeEliminado { get; set; }
+        public string mensajeEditado { get; set; }
 
         //Borrar y ejecutar Modal evento User Control
         protected void UserControlClickEvent(object sender, EventArgs e)
