@@ -1,7 +1,5 @@
 ﻿(function ($, Window, undefined) {
 
-    
-
     var $botonEditar = $("#MainPlaceHolder_btnEditar"),
         $botonEliminar = $("#MainPlaceHolder_btnEliminar"),
         $botonGuardar = $("#MainPlaceHolder_btnGuardar"),

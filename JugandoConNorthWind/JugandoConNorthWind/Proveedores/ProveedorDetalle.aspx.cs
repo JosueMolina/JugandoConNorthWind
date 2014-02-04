@@ -40,7 +40,7 @@ namespace JugandoConNorthWind.Proveedores
             AvisoEliminarRegistroControl.EliminadoRetornoURLEvent += new EventHandler(btnRedireccionar);
             AvisoEliminarRegistroControl.mensaje = "Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo serán establecidos como articulos 'Sin Proveedor'";
             AvisoEliminarRegistroControl.mensajeNoEliminado = "Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente.";
-            AvisoEliminarRegistroControl.mesajeEliminado = "Registro Eliminado Exitosamente.";
+            AvisoEliminarRegistroControl.mensajeEliminado = "Registro Eliminado Exitosamente.";
             AvisoEliminarRegistroControl.mensajeEditado = "Registro Editado Correctamente";
 
             if (!IsPostBack)

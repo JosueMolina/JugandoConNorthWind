@@ -45,10 +45,26 @@
         <h4 class="modal-title" id="H2"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Información</h4>
       </div>
       <div class="modal-body">
-        <%: this.mesajeEliminado %>
+        <%: this.mensajeEliminado %>
       </div>
       <div class="modal-footer">
         <asp:LinkButton runat="server" ID="btnAceptarRedireccionar" class="btn btn-primary" OnClick="EliminadoRetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="modal fade" data-backdrop="static" id="modalEditado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h4 class="modal-title" id="H3"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Información</h4>
+      </div>
+      <div class="modal-body">
+        <%: this.mensajeEditado %>
+      </div>
+      <div class="modal-footer">
+        <asp:LinkButton runat="server" ID="LinkButton1" class="btn btn-primary" OnClick="EliminadoRetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
       </div>
     </div>
   </div>

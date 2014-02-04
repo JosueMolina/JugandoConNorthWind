@@ -170,6 +170,7 @@
     <Content Include="Proveedores\Proveedores.aspx" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\CustomScripts\custom.js" />
+    <Content Include="Scripts\CustomScripts\Proveedores.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
     <Content Include="Scripts\jquery-ui-1.8.24.js" />
