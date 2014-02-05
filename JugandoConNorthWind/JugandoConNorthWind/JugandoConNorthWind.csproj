@@ -135,6 +135,7 @@
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\custom.css" />
     <Content Include="Content\Styles\toastr.css" />
+    <Content Include="Empleados\Empleados.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
     <Content Include="Images\heroAccent.png" />
@@ -171,6 +172,7 @@
     <Content Include="Proveedores\Proveedores.aspx" />
     <Content Include="Scripts\Bootstrap\bootstrap.min.js" />
     <Content Include="Scripts\CustomScripts\custom.js" />
+    <Content Include="Scripts\CustomScripts\Empleados.js" />
     <Content Include="Scripts\CustomScripts\Proveedores.js" />
     <Content Include="Scripts\jquery-1.8.2.js" />
     <Content Include="Scripts\jquery-1.8.2.min.js" />
@@ -258,6 +260,13 @@
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Empleados\Empleados.aspx.cs">
+      <DependentUpon>Empleados.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\Empleados.aspx.designer.cs">
+      <DependentUpon>Empleados.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -327,6 +336,7 @@
     <Compile Include="Proveedores\Proveedores.aspx.designer.cs">
       <DependentUpon>Proveedores.aspx</DependentUpon>
     </Compile>
+    <Compile Include="Repositorio\EmpleadosRepositorio.cs" />
     <Compile Include="Repositorio\ProveedoresRepositorio.cs" />
     <Compile Include="Site.Master.cs">
       <DependentUpon>Site.Master</DependentUpon>
