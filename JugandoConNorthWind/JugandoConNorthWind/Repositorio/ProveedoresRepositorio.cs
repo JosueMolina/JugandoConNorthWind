@@ -15,6 +15,35 @@ namespace JugandoConNorthWind.Repositorio
             _context = context;
         }
 
+        public bool AgregarProveedor(ProveedoresDTO proveedorDTO) {
+            bool agregado = false;
+
+            try
+            {
+                Suppliers proveedor = new Suppliers();
+
+                proveedor.CompanyName = proveedorDTO.CompanyName;
+                proveedor.ContactName = proveedorDTO.ContactName;
+                proveedor.ContactTitle = proveedorDTO.ContactTitle;
+                proveedor.Address = proveedorDTO.Address;
+                proveedor.City = proveedorDTO.City;
+                proveedor.Region = proveedorDTO.Region;
+                proveedor.PostalCode = proveedorDTO.PostalCode;
+                proveedor.Country = proveedorDTO.Country;
+                proveedor.Phone = proveedorDTO.Phone;
+                proveedor.Fax = proveedorDTO.Fax;
+                proveedor.HomePage = proveedorDTO.HomePage;
+
+                _context.Suppliers.Add(proveedor);
+
+                if (_context.SaveChanges() > 0)
+                    agregado = true;
+            }
+            catch (Exception){}
+            
+            return agregado;
+        }
+
         public IEnumerable<Suppliers> ListaProveedores()
          {
              var proveedores = _context.Suppliers.Where(p => p.SupplierID != 30).ToList();

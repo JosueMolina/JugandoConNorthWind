@@ -175,13 +175,13 @@ namespace JugandoConNorthWind.Proveedores {
         protected global::System.Web.UI.WebControls.PlaceHolder phMensajeErrorEditar;
         
         /// <summary>
-        /// Control AvisoEliminarRegistroControl.
+        /// Control AvisoModalsControl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl AvisoEliminarRegistroControl;
+        protected global::JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl AvisoModalsControl;
         
         /// <summary>
         /// Control EjecutarModel.

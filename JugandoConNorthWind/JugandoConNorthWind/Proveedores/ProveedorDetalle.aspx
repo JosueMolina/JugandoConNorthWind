@@ -1,6 +1,8 @@
 ﻿<%@ Page  MaintainScrollPositionOnPostback="true" Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="ProveedorDetalle.aspx.cs" Inherits="JugandoConNorthWind.Proveedores.ProveedorDetalle" %>
 
 
+
+
 <asp:Content ID="Head" ContentPlaceHolderID="HeadContent" runat="server">
 </asp:Content>
 <asp:Content ID="Main" ContentPlaceHolderID="MainPlaceHolder" runat="server">
@@ -96,7 +98,7 @@
                   </div>
                   <div id="Editar-Eliminar" class="pull-right" style="padding-right: 1.7em;">
                     <a class="btn btn-default btn-primary btn-info" runat="server" id="btnEditar">Editar</a>
-                    <a data-toggle="modal" style="margin-left: 0.5em;" data-target="#myModal" class="btn btn-default btn-primary btn-danger" runat="server" id="btnEliminar">Eliminar</a>
+                    <a data-toggle="modal" style="margin-left: 0.5em;" data-target="#modalAviso" class="btn btn-default btn-primary btn-danger" runat="server" id="btnEliminar">Eliminar</a>
                     <a href="~/Proveedores/Proveedores.aspx" style="margin-left: 0.5em;" class="btn btn-default btn-primary" runat="server"> <span class="glyphicon glyphicon-circle-arrow-left"></span></a>           
                   </div>
                 </div>
@@ -104,8 +106,8 @@
             </fieldset>
             <asp:PlaceHolder runat="server" ID="phMensajeErrorEditar" /> 
             <!--Modal Aviso Eliminar-->
-            <%@ Register Src="~/UsersControls/AvisoEliminarRegistroControl.ascx" TagPrefix="Control" TagName="AvisoEliminarRegistroControl" %>
-            <Control:AvisoEliminarRegistroControl runat="server" id="AvisoEliminarRegistroControl" />
+            <%@ Register Src="~/UsersControls/AvisoModalsControl.ascx" TagPrefix="control" TagName="AvisoModalsControl" %>
+            <control:AvisoModalsControl runat="server" id="AvisoModalsControl" />
 
           </form>
         </div>

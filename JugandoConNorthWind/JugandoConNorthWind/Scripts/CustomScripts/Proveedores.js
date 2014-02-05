@@ -2,10 +2,10 @@
     $contenedorBotonDesFormulario = $("#btnDesplegarFormAgregarProveedor").parents(".row");
     $botonDesplegarFormulario = $("#btnDesplegarFormAgregarProveedor");
     $ContFormAgregarProveedor = $("#formularioAgregarProveedor").parents(".row");
+    $btnGuardar = $("#MainPlaceHolder_btnGuardar");
     $btnCancelar = $("#btnCancelar");
 
     $("#Guardar-Cancelar").css("display", "inline-block");
-    $ContFormAgregarProveedor.find("input").attr("disabled", false);
 
     $botonDesplegarFormulario.on("click", function (e) {
         $ContFormAgregarProveedor.slideToggle();
@@ -15,7 +15,15 @@
     });
 
     $btnCancelar.on("click", function (e) { e.preventDefault(); $botonDesplegarFormulario.trigger("click"); });
-    console.log("contenedor : " , $contenedorBotonDesFormulario);
-    console.log("boton : " , $btnCancelar);
+
+    $btnGuardar.on("click", function (e) {
+        $("#btnSubmit").trigger("click");
+        var form = $("#formPrincipal");
+        form.validate();
+        console.log(form.valid());
+        if (!form.valid()) {
+            e.preventDefault();
+        }
+    });
 
 })(jQuery, Window, undefined);

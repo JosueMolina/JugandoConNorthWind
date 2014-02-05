@@ -1,7 +1,7 @@
-﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AvisoEliminarRegistroControl.ascx.cs" Inherits="JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl" %>
+﻿<%@ Control Language="C#" AutoEventWireup="true" CodeBehind="AvisoModalsControl.ascx.cs" Inherits="JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl" %>
 
-<!--Modal Aviso Eliminar-->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Modal Aviso-->
+<div class="modal fade" id="modalAviso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -9,7 +9,7 @@
         <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Advertencia</h4>
       </div>
       <div class="modal-body">
-        <%: this.mensaje%>
+        <%: this.mensajeAviso%>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
@@ -19,8 +19,8 @@
   </div>
 </div>
 
-<!--Modal No Eliminado-->
-<div class="modal fade" id="modalNoEliminado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Modal No Exitoso-->
+<div class="modal fade" id="modalNoExitoso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
@@ -28,7 +28,7 @@
         <h4 class="modal-title" id="H1"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Advertencia</h4>
       </div>
       <div class="modal-body">
-        <%: this.mensajeNoEliminado %>
+        <%: this.mensajeNoExitoso %>
       </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-primary" data-dismiss="modal">Aceptar</button>
@@ -37,34 +37,35 @@
   </div>
 </div>
 
-<!--Modal Si Eliminado-->
-<div class="modal fade" data-backdrop="static" id="modalEliminado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Modal Exitoso-->
+<div class="modal fade" data-backdrop="static" id="modalExitoso" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="H2"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Información</h4>
       </div>
       <div class="modal-body">
-        <%: this.mensajeEliminado %>
+        <%: this.mensajeExitoso %>
       </div>
       <div class="modal-footer">
-        <asp:LinkButton runat="server" ID="btnAceptarRedireccionar" class="btn btn-primary" OnClick="EliminadoRetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
+        <asp:LinkButton runat="server" ID="btnAceptarRedireccionar" class="btn btn-primary" OnClick="RetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
       </div>
     </div>
   </div>
 </div>
 
-<div class="modal fade" data-backdrop="static" id="modalEditado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+<!--Modal Exitoso Alternativo-->
+<div class="modal fade" data-backdrop="static" id="modalExitosoAlternativo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
   <div class="modal-dialog">
     <div class="modal-content">
       <div class="modal-header">
         <h4 class="modal-title" id="H3"><span class="glyphicon glyphicon-exclamation-sign"></span>  Mensaje de Información</h4>
       </div>
       <div class="modal-body">
-        <%: this.mensajeEditado %>
+        <%: this.mensajeExitosoAlternativo %>
       </div>
       <div class="modal-footer">
-        <asp:LinkButton runat="server" ID="LinkButton1" class="btn btn-primary" OnClick="EliminadoRetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
+        <asp:LinkButton runat="server" ID="LinkButton1" class="btn btn-primary" OnClick="RetornoURL_DesdeUserControl">Aceptar</asp:LinkButton>
       </div>
     </div>
   </div>

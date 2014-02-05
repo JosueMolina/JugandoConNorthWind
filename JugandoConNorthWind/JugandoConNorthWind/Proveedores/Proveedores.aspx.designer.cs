@@ -13,13 +13,13 @@ namespace JugandoConNorthWind.Proveedores {
     public partial class Proveedores {
         
         /// <summary>
-        /// Control form1.
+        /// Control formPrincipal.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm form1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formPrincipal;
         
         /// <summary>
         /// Control BuscarProveedorInput.
@@ -155,5 +155,14 @@ namespace JugandoConNorthWind.Proveedores {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.ListView LVProveedores;
+        
+        /// <summary>
+        /// Control ToastrLiteral.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal ToastrLiteral;
     }
 }

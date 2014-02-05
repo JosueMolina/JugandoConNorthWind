@@ -36,12 +36,12 @@ namespace JugandoConNorthWind.Proveedores
                 Response.Redirect("~/Proveedores/Proveedores.aspx");
 
             //Configurando UserControl Para los Modal de Mensajes de Eliminado
-            AvisoEliminarRegistroControl.UserControlButtonClicked += new EventHandler(btnEliminar_Click);
-            AvisoEliminarRegistroControl.EliminadoRetornoURLEvent += new EventHandler(btnRedireccionar);
-            AvisoEliminarRegistroControl.mensaje = "Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo serán establecidos como articulos 'Sin Proveedor'";
-            AvisoEliminarRegistroControl.mensajeNoEliminado = "Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente.";
-            AvisoEliminarRegistroControl.mensajeEliminado = "Registro Eliminado Exitosamente.";
-            AvisoEliminarRegistroControl.mensajeEditado = "Registro Editado Correctamente";
+            AvisoModalsControl.UserControlButtonClicked += new EventHandler(btnEliminar_Click);
+            AvisoModalsControl.RetornoURLEvent += new EventHandler(btnRedireccionar);
+            AvisoModalsControl.mensajeAviso = "Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo serán establecidos como articulos 'Sin Proveedor'";
+            AvisoModalsControl.mensajeNoExitoso = "Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente.";
+            AvisoModalsControl.mensajeExitoso = "Registro Eliminado Exitosamente.";
+            AvisoModalsControl.mensajeExitosoAlternativo = "Registro Editado Correctamente";
 
             if (!IsPostBack)
             {
@@ -95,8 +95,8 @@ namespace JugandoConNorthWind.Proveedores
         {
             System.Diagnostics.Debug.WriteLine("Hola Mundo");
             EjecutarModel.Text = !_pRepo.RemoverProveedor(int.Parse(IdDelProveedor)) ?
-                                  "<script>$('#modalNoEliminado').modal('toggle')</script>" :
-                                  "<script>$('#modalEliminado').modal('toggle')</script>";
+                                  "<script>$('#modalNoExitoso').modal('toggle')</script>" :
+                                  "<script>$('#modalExitoso').modal('toggle')</script>";
         }
         public void btnGuardar_Click(object sender, EventArgs e)
         {
@@ -108,7 +108,7 @@ namespace JugandoConNorthWind.Proveedores
             if (proveedorDTO == null || errores.Count > 0)
             {
                 Label label = new Label();
-                label.Text = "No se pudeo Editar el Registro...";
+                label.Text = "No se pudo Editar el Registro...";
                 phMensajeErrorEditar.Controls.Add(label);
 
                 if (errores.Count() > 0)
@@ -128,7 +128,7 @@ namespace JugandoConNorthWind.Proveedores
             else 
             {
                 _pRepo.EditarProveedor(int.Parse(IdDelProveedor), proveedorDTO);
-                EjecutarModel.Text = "<script>$('#modalEditado').modal('toggle');</script>";
+                EjecutarModel.Text = "<script>$('#modalExitosoAlternativo').modal('toggle');</script>";
             }
         }
 

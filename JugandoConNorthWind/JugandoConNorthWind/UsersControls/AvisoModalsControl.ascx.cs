@@ -10,12 +10,12 @@ namespace JugandoConNorthWind.UsersControls
     public partial class AvisoEliminarRegistroControl : System.Web.UI.UserControl
     {
         public event EventHandler UserControlButtonClicked;
-        public event EventHandler EliminadoRetornoURLEvent;
+        public event EventHandler RetornoURLEvent;
 
-        public string mensaje { get; set; }
-        public string mensajeNoEliminado { get; set; }
-        public string mensajeEliminado { get; set; }
-        public string mensajeEditado { get; set; }
+        public string mensajeAviso { get; set; }
+        public string mensajeNoExitoso { get; set; }
+        public string mensajeExitoso { get; set; }
+        public string mensajeExitosoAlternativo { get; set; }
 
         //Borrar y ejecutar Modal evento User Control
         protected void UserControlClickEvent(object sender, EventArgs e)
@@ -24,15 +24,15 @@ namespace JugandoConNorthWind.UsersControls
         }
 
         //Eliminado RetornoUrl Evento User Control
-        protected void EliminadoRetornoURL_DesdeUserControl(object sender, EventArgs e)
+        protected void RetornoURL_DesdeUserControl(object sender, EventArgs e)
         {
-            EliminadoRetornoURL();
+            RetornoURL();
         }
 
-        private void EliminadoRetornoURL()
+        private void RetornoURL()
         {
-            if (EliminadoRetornoURLEvent != null)
-                EliminadoRetornoURLEvent(this, EventArgs.Empty);
+            if (RetornoURLEvent != null)
+                RetornoURLEvent(this, EventArgs.Empty);
         }
 
         private void OnClickEvent()
