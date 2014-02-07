@@ -26,4 +26,11 @@
         }
     });
 
+
+    $("#btnCargarImagen").on("click", function (e) {
+        e.preventDefault(); 
+        $("input[type='file']").trigger("click");
+            
+    });
+
 })(jQuery, Window, undefined);

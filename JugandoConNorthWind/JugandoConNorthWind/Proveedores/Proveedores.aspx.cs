@@ -35,21 +35,39 @@ namespace JugandoConNorthWind.Proveedores
         public void btnGuardar_Click(object sender, EventArgs e)
         {
 
-            ProveedoresDTO proveedor = ControlesADatos();
+            ProveedoresDTO proveedorDTO = ControlesADatos();
 
-            if (proveedor != null && errores.Count < 1)
+            if (proveedorDTO == null || errores.Count > 0)
             {
-                if (_pCRUD.AgregarProveedor(proveedor))
+                Label _label = new Label();
+                _label.Text = "No se pudo agregar el Proveedor";
+                phMensajeErrorEditar.Controls.Add(_label);
+
+                if (errores.Count > 0)
                 {
-                    LVProveedores.DataSource = _pCRUD.ListaProveedores();
-                    LVProveedores.DataBind();
-                   
-                    ToastrLiteral.Text = "<script> toastr.info('Proveedor creado exitosamente'); </script>";
+                    foreach (string error in errores)
+                    {
+                        phMensajeErrorEditar.Controls.Add(new LiteralControl("<br />"));
+                        Label label = new Label();
+                        phMensajeErrorEditar.Controls.Add(label);
+                    }
                 }
 
             }
             else 
             {
+                if (_pCRUD.AgregarProveedor(proveedorDTO))
+                {
+                    ToastrLiteral.Text = "<script>toastr.info('Proveedor guardado Exitosamente')</script>";
+                    LVProveedores.DataSource = _pCRUD.ListaProveedores();
+                    LVProveedores.DataBind();
+                }
+                else 
+                {
+                    Label label = new Label();
+                    label.Text = "No se pudo Agregar el Poveedor";
+                    phMensajeErrorEditar.Controls.Add(label);
+                }
             }
         }
 

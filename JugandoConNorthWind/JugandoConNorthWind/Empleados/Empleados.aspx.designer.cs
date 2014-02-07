@@ -40,31 +40,58 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
         
         /// <summary>
-        /// Control inputCompanyName.
+        /// Control inputFirstName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputCompanyName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputFirstName;
         
         /// <summary>
-        /// Control inputContactName.
+        /// Control inputLastName.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputContactName;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputLastName;
         
         /// <summary>
-        /// Control inputContactTitle.
+        /// Control inputTitle.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputContactTitle;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitle;
+        
+        /// <summary>
+        /// Control inputTitleOfCourtesy.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleOfCourtesy;
+        
+        /// <summary>
+        /// Control inputBirthDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputBirthDate;
+        
+        /// <summary>
+        /// Control inputHireDate.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHireDate;
         
         /// <summary>
         /// Control inputAdress.
@@ -85,13 +112,13 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputCity;
         
         /// <summary>
-        /// Control inputRegion.
+        /// Control inputRegión.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputRegion;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputRegión;
         
         /// <summary>
         /// Control inputPostalCode.
@@ -112,31 +139,58 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputCountry;
         
         /// <summary>
-        /// Control inputPhone.
+        /// Control inputHomePhone.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPhone;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHomePhone;
         
         /// <summary>
-        /// Control inputFax.
+        /// Control inputExtension.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputFax;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputExtension;
         
         /// <summary>
-        /// Control inputHomePage.
+        /// Control inputFileImagen.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHomePage;
+        protected global::System.Web.UI.WebControls.FileUpload inputFileImagen;
+        
+        /// <summary>
+        /// Control inputPhoto.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPhoto;
+        
+        /// <summary>
+        /// Control inputNotes.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputNotes;
+        
+        /// <summary>
+        /// Control inputPhotoPath.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPhotoPath;
         
         /// <summary>
         /// Control btnGuardar.
