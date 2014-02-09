@@ -2,12 +2,14 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
-
+using System.ComponentModel.DataAnnotations;
 namespace JugandoConNorthWind.ClasesDTO
 {
     public class EmpleadosDTO
     {
+        [Required]
         public string FirstName { get; set; }
+        [Required]
         public string LastName { get; set; }
         public string Title { get; set; }
         public string TitleOfCourtesy { get; set; }

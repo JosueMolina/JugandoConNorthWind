@@ -10,34 +10,25 @@
 namespace JugandoConNorthWind.Empleados {
     
     
-    public partial class Empleados {
+    public partial class EmpleadoDetalle {
         
         /// <summary>
-        /// Control formPrincipal.
+        /// Control contenedor.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formPrincipal;
+        protected global::System.Web.UI.HtmlControls.HtmlGenericControl contenedor;
         
         /// <summary>
-        /// Control BuscarEmpleadoInput.
+        /// Control formulario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuscarEmpleadoInput;
-        
-        /// <summary>
-        /// Control A1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formulario;
         
         /// <summary>
         /// Control inputFirstName.
@@ -220,21 +211,21 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.WebControls.PlaceHolder phMensajeErrorEditar;
         
         /// <summary>
-        /// Control LVEmpleados.
+        /// Control AvisoModalsControl.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView LVEmpleados;
+        protected global::JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl AvisoModalsControl;
         
         /// <summary>
-        /// Control ToastrLiteral.
+        /// Control EjecutarModel.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Literal ToastrLiteral;
+        protected global::System.Web.UI.WebControls.Literal EjecutarModel;
     }
 }

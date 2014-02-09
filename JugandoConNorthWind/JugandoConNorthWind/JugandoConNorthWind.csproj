@@ -135,6 +135,7 @@
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\custom.css" />
     <Content Include="Content\Styles\toastr.css" />
+    <Content Include="Empleados\EmpleadoDetalle.aspx" />
     <Content Include="Empleados\Empleados.aspx" />
     <Content Include="Images\accent.png" />
     <Content Include="Images\bullet.png" />
@@ -260,6 +261,13 @@
     </Compile>
     <Compile Include="Default.aspx.designer.cs">
       <DependentUpon>Default.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Empleados\EmpleadoDetalle.aspx.cs">
+      <DependentUpon>EmpleadoDetalle.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Empleados\EmpleadoDetalle.aspx.designer.cs">
+      <DependentUpon>EmpleadoDetalle.aspx</DependentUpon>
     </Compile>
     <Compile Include="Empleados\Empleados.aspx.cs">
       <DependentUpon>Empleados.aspx</DependentUpon>

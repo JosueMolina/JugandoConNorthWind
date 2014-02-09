@@ -56,5 +56,31 @@ namespace JugandoConNorthWind.Repositorio
             }
             return agregado;
         }
+
+        public List<Employees> BuscarEmpleados(string texto)
+        {
+            return _context.Employees.Where(em => em.LastName.Contains(texto) || em.FirstName.Contains(texto)).ToList();
+        }
+
+        public Employees ObtenerEmpleado(string parmId)
+        {
+            Employees empleado = null;
+            try
+            {
+                int id;
+                bool convertido = int.TryParse(parmId, out id);
+
+                if (!convertido)
+                    return null;
+
+                empleado = _context.Employees.FirstOrDefault(em => em.EmployeeID == id);
+            }
+            catch (Exception)
+            {
+                return null;
+            }
+
+            return empleado;
+        }
     }
 }

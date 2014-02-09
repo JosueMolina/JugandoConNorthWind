@@ -129,11 +129,26 @@ namespace JugandoConNorthWind.Empleados
                     label.Text = "No se pudo agregar el empleado";
                     phMensajeErrorEditar.Controls.Add(label);
                 }
+            }     
+
+        }
+
+        public void DesplegarImagen_Click()
+        {
+            CapturarArregloDeImagen();
+
+            if (arregloImagen != null)
+            {
+                string data = Convert.ToBase64String(arregloImagen);
+                Imagen.Src = String.Format("data:image/jpeg;base64,{0}", data);
             }
+        }
 
-            
-                
-
+        protected void BuscarEmpleadoInput_TextChanged(object sender, EventArgs e)
+        {
+            string texto = BuscarEmpleadoInput.Text.Replace("--", "").Replace(";", "").Trim();
+            LVEmpleados.DataSource = _empCRUD.BuscarEmpleados(texto);
+            LVEmpleados.DataBind();
         }
     }
 }
