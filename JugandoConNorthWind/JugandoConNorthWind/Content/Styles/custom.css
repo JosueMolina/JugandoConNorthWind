@@ -11,3 +11,17 @@ span.elemento-requerido
     font-weight: bold;
     text-shadow: 1px 1px 0px rgba(40,40,50,1);
 }
+
+.col-lg-7 input, .col-lg-7 textarea
+{
+    width: 85%;
+    -webkit-transition: .1s all linear;
+    -moz-transition: .1s all linear;
+    -o-transition: .1s all linear;
+    transition: .1s all linear;
+}
+
+.col-lg-7 input:focus, .col-lg-7 textarea:focus
+{
+    width: 100%;
+}

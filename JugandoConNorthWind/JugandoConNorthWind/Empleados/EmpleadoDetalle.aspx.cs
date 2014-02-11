@@ -56,8 +56,6 @@ namespace JugandoConNorthWind.Empleados
                 inputLastName.Value = empleado.LastName ?? "";
                 inputTitle.Value = empleado.Title ?? "";
                 inputTitleOfCourtesy.Value = empleado.TitleOfCourtesy ?? "";
-                inputBirthDate.Value = empleado.BirthDate.ToString();
-                inputHireDate.Value = empleado.HireDate.ToString();
                 inputAdress.Value = empleado.Address ?? "";
                 inputCity.Value = empleado.City ?? "";
                 inputRegión.Value = empleado.Country ?? "";
@@ -66,7 +64,11 @@ namespace JugandoConNorthWind.Empleados
                 inputHomePhone.Value = empleado.HomePhone ?? "";
                 inputExtension.Value = empleado.Extension ?? "";
                 inputNotes.Value = empleado.Notes ?? "";
-                inputPhotoPath.Value = empleado.PhotoPath ?? "";
+                //inputPhotoPath.Value = empleado.PhotoPath ?? "";
+                CalendarioHireDate.SelectedDate = empleado.HireDate.Value;
+                CalendarioHireDate.VisibleDate = empleado.HireDate.Value;
+                CalendarioBirthDate.SelectedDate = empleado.BirthDate.Value;
+                CalendarioBirthDate.VisibleDate = empleado.BirthDate.Value;
                 if (empleado.Photo != null)
                 {
                     byte[] arregloImag = empleado.Photo;
