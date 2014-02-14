@@ -33,6 +33,14 @@ namespace JugandoConNorthWind.Empleados
             if (empleado == null)
                 Response.Redirect("~/Empleados/Empleados.aspx");
 
+            //Configurado User Control  para los mensajes del Modal
+            AvisoModalsControl.UserControlButtonClicked += new EventHandler(btnEliminarClick);
+            AvisoModalsControl.RetornoURLEvent += new EventHandler(retornoUrl);
+            AvisoModalsControl.mensajeAviso = "Esta a punto de eliminar permanentemente un registro, todos los registros que dependan del mismo serán establecidos como articulos 'Sin Empleado'";
+            AvisoModalsControl.mensajeNoExitoso = "Ha Ocurrido un problema al intentar borrar el registro, por lo tanto no se ha terminado la Operación Excitosamente.";
+            AvisoModalsControl.mensajeExitoso = "Registro Eliminado Exitosamente.";
+            AvisoModalsControl.mensajeExitosoAlternativo = "Registro Editado Correctamente";
+
             //Pasando los datos a los controles
             if (!IsPostBack)
             {
@@ -65,10 +73,10 @@ namespace JugandoConNorthWind.Empleados
                 inputExtension.Value = empleado.Extension ?? "";
                 inputNotes.Value = empleado.Notes ?? "";
                 //inputPhotoPath.Value = empleado.PhotoPath ?? "";
-                CalendarioHireDate.SelectedDate = empleado.HireDate.Value;
-                CalendarioHireDate.VisibleDate = empleado.HireDate.Value;
-                CalendarioBirthDate.SelectedDate = empleado.BirthDate.Value;
-                CalendarioBirthDate.VisibleDate = empleado.BirthDate.Value;
+                //CalendarioHireDate.SelectedDate = empleado.HireDate.Value;
+                //CalendarioHireDate.VisibleDate = empleado.HireDate.Value;
+                //CalendarioBirthDate.SelectedDate = empleado.BirthDate.Value;
+                //CalendarioBirthDate.VisibleDate = empleado.BirthDate.Value;
                 if (empleado.Photo != null)
                 {
                     byte[] arregloImag = empleado.Photo;
@@ -84,6 +92,18 @@ namespace JugandoConNorthWind.Empleados
                 throw;
             }
             return convertidos;
+        }
+
+        public void btnEliminarClick(object sender, EventArgs e)
+        {
+            EjecutarModel.Text = !_emCRUD.EliminarEmpleado(int.Parse(idEmpleado)) ?
+                "<script>$('#modalNoExitoso').modal('toggle');</script>" : 
+                "<script>$('#modalExitoso').modal('toggle');</script>";
+        }
+
+        public void retornoUrl(object sender, EventArgs e)
+        {
+            Response.Redirect("~/Empleados/Empleados.aspx");
         }
 
 

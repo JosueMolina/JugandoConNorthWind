@@ -5,6 +5,7 @@ using System.Web;
 using System.Data.Entity;
 using JugandoConNorthWind.ModeloNorthWind;
 using JugandoConNorthWind.ClasesDTO;
+
 namespace JugandoConNorthWind.Repositorio
 {
     public class EmpleadosRepositorio
@@ -59,7 +60,8 @@ namespace JugandoConNorthWind.Repositorio
 
         public List<Employees> BuscarEmpleados(string texto)
         {
-            return _context.Employees.Where(em => em.LastName.Contains(texto) || em.FirstName.Contains(texto)).ToList();
+            return _context.Employees.Where(em => em.LastName.Contains(texto) 
+                    || em.FirstName.Contains(texto)).ToList();
         }
 
         public Employees ObtenerEmpleado(string parmId)
@@ -73,7 +75,8 @@ namespace JugandoConNorthWind.Repositorio
                 if (!convertido)
                     return null;
 
-                empleado = _context.Employees.FirstOrDefault(em => em.EmployeeID == id);
+                empleado =  _context.Employees
+                .FirstOrDefault(em => em.EmployeeID == id);
             }
             catch (Exception)
             {
@@ -81,6 +84,24 @@ namespace JugandoConNorthWind.Repositorio
             }
 
             return empleado;
+        }
+
+        public bool EliminarEmpleado(int id)
+        {
+            bool eliminado = false;
+            Employees empleado = ObtenerEmpleado(id.ToString());
+
+            if (empleado != null)
+            {
+                try
+                {
+                    _context.Employees.Remove(empleado);
+                    if(_context.SaveChanges() > 0)
+                    eliminado = true;
+                }
+                catch (Exception) { }
+            }
+            return eliminado;
         }
     }
 }

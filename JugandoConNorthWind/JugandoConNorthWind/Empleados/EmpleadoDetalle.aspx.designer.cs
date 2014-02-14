@@ -40,6 +40,33 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.ScriptManager sm;
         
         /// <summary>
+        /// Control btnEditar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnEditar;
+        
+        /// <summary>
+        /// Control btnGuardar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnGuardar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor btnCancelar;
+        
+        /// <summary>
         /// Control inputFirstName.
         /// </summary>
         /// <remarks>
@@ -121,24 +148,6 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputRegión;
         
         /// <summary>
-        /// Control UpdatePanel2.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel2;
-        
-        /// <summary>
-        /// Control CalendarioHireDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarioHireDate;
-        
-        /// <summary>
         /// Control inputPostalCode.
         /// </summary>
         /// <remarks>
@@ -182,33 +191,6 @@ namespace JugandoConNorthWind.Empleados {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea inputNotes;
-        
-        /// <summary>
-        /// Control UpdatePanel1.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
-        
-        /// <summary>
-        /// Control CalendarioBirthDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Calendar CalendarioBirthDate;
-        
-        /// <summary>
-        /// Control btnGuardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGuardar;
         
         /// <summary>
         /// Control phMensajeErrorEditar.

@@ -167,7 +167,7 @@
     
     <%--Uso de Toastr--%>
 
-    <script src="../Scripts/jquery-1.8.2.min.js"></script>
+    <script src="../Scripts/jquery-2.1.0.min.js"></script>
     <script src="../Scripts/Bootstrap/bootstrap.min.js"></script>
     <script src="../Scripts/Plugins/jquery.validate.js"></script>
     <script src="../Scripts/Plugins/additional-methods.js"></script>

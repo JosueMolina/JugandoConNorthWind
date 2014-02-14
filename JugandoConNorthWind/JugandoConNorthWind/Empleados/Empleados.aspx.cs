@@ -64,7 +64,6 @@ namespace JugandoConNorthWind.Empleados
             }
             catch (Exception)
             {
-                
                 throw;
             }
             return empleadoDTO;

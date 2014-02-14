@@ -10,6 +10,7 @@
     $botonEditar.on("click", function (e) {
         e.preventDefault();
         $("input").attr("disabled", false);
+        $("textarea").attr("disabled", false);
         $botonesOpciones.fadeOut(200, function () {
             $botonesEditando.fadeIn(200);
         });
@@ -31,8 +32,10 @@
         e.preventDefault();
 
         $("input").attr("disabled", true);
+        $("textarea").attr("disabled", true);
         $botonesEditando.fadeOut(200, function () {
             $botonesOpciones.fadeIn(200);
         });
     });
+
 })(jQuery, Window, undefined);

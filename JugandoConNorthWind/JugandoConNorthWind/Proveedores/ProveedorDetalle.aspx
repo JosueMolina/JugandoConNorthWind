@@ -93,7 +93,7 @@
                 <div class="col-lg-12">
                   <div id="Guardar-Cancelar" class="pull-right" style="padding-right: 1.7em;">
                     <asp:LinkButton runat="server" class="btn btn-default btn-primary btn-info" ID="btnGuardar" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
-                    <a href="#" style="margin-left: 0.5em;" class="btn btn-primary" runat="server" id="btnCancelar">Cancelar</a>
+                    <a href="" style="margin-left: 0.5em;" class="btn btn-primary" runat="server" id="btnCancelar">Cancelar</a>
                     <button style="display: none;" type="submit" id="btnSubmit">Submit</button>
                   </div>
                   <div id="Editar-Eliminar" class="pull-right" style="padding-right: 1.7em;">
@@ -115,7 +115,7 @@
     </div>
   </div>
 
-  <script src="../Scripts/jquery-1.8.2.min.js"></script>
+  <script src="../Scripts/jquery-2.1.0.min.js"></script>
   <script src="../Scripts/Bootstrap/bootstrap.min.js"></script>
   <script src="../Scripts/Plugins/jquery.validate.js"></script>
   <script src="../Scripts/Plugins/additional-methods.js"></script>

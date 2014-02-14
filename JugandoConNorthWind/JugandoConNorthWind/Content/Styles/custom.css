@@ -1,8 +1,14 @@
-﻿form input.form-control:focus:invalid   
+﻿::-webkit-input-placeholder{color:black !important;}
+::-moz-placeholder{color:black;}
+
+form input.form-control:invalid   
 {
     box-shadow: 0 0 5px #d45252;
-    border: 3px solid #b03535;
+    border: 1px solid #b03535;
+    background: #ffb8b8;
 }
+
+
 
 span.elemento-requerido
 {
@@ -12,16 +18,74 @@ span.elemento-requerido
     text-shadow: 1px 1px 0px rgba(40,40,50,1);
 }
 
-.col-lg-7 input, .col-lg-7 textarea
+.col-lg-11 .input-group span
 {
-    width: 85%;
-    -webkit-transition: .1s all linear;
-    -moz-transition: .1s all linear;
-    -o-transition: .1s all linear;
-    transition: .1s all linear;
+    width: 50%;
+    border:none; 
 }
 
-.col-lg-7 input:focus, .col-lg-7 textarea:focus
+.col-lg-11 .input-group .foto span
+{
+    width: 25%;
+}
+
+.col-lg-11 .input-group .form-control
+{
+    display: inline-block;
+    width: 175%;
+}
+.col-lg-11 .input-group input, .col-lg-11 .input-group textarea
+{
+    width: 85%;
+
+}
+
+.col-lg-11 input:focus, .col-lg-11 textarea:focus
 {
     width: 100%;
+}
+
+.label-calendario
+{
+    padding: 10px 10px;
+    border-radius: 5px 0 0 5px;
+    background-image: -webkit-linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background-image: linear-gradient(#484e55, #3a3f44 60%, #313539);
+    background-repeat: no-repeat;
+    display: inline-block;
+    width: 36%;
+    color: white;
+}
+
+/*Para el control calendario de ASP*/
+.calendario-control
+{
+    display: inline-block;
+}
+
+table.calendario-control
+{
+    border: 2px solid #cbcbcb !important;
+}
+
+table.calendario-control tbody, 
+table.calendario-control tbody tr,
+table.calendario-control tbody tr td a
+{
+}
+table.calendario-control tbody tr:first-child, table.calendario-control tbody tr:first-child td
+{
+    border: 0px solid transparent !important;
+    background: #27c2ef;
+    color: white;
+}
+
+.input-group select.form-control
+{
+    display: inline-block;
+}
+
+.col-lg-11 .input-group span.input-group-addon.excepto
+{
+    width: 40%;
 }
