@@ -134,6 +134,9 @@
     <Content Include="Account\OpenAuthProviders.ascx" />
     <Content Include="Account\Register.aspx" />
     <Content Include="Account\RegisterExternalLogin.aspx" />
+    <Content Include="Content\Imagenes\invalid.png" />
+    <Content Include="Content\Imagenes\red_asterisk.png" />
+    <Content Include="Content\Imagenes\valid.png" />
     <Content Include="Content\Styles\bootstrap.css" />
     <Content Include="Content\Styles\custom.css" />
     <Content Include="Content\Styles\toastr.css" />

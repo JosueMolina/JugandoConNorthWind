@@ -11,6 +11,7 @@
         e.preventDefault();
         $("input").attr("disabled", false);
         $("textarea").attr("disabled", false);
+        $("select").attr("disabled", false);
         $botonesOpciones.fadeOut(200, function () {
             $botonesEditando.fadeIn(200);
         });
@@ -19,7 +20,17 @@
     $botonGuardar.on("click", function (e) {
         $("#btnSubmit").trigger("click");
         var form = $("#formulario");
-        form.validate();
+        form.validate({
+            showErrors: function (errorMap, errorList) {
+                var i, length = errorList.length;
+                var element, mensajeError;
+                for (var i = 0; i < length; i++) {
+                    element = errorList[i].element;
+                    mensajeError = element.validationMessage;
+                    element.title = mensajeError;
+                }
+            }
+        });
         console.log(form.valid());
         if (!form.valid())
         {
@@ -33,6 +44,7 @@
 
         $("input").attr("disabled", true);
         $("textarea").attr("disabled", true);
+        $("select").attr("disabled", true);
         $botonesEditando.fadeOut(200, function () {
             $botonesOpciones.fadeIn(200);
         });

@@ -139,37 +139,36 @@
                         </div>
                       </div>
 
-                                            <div class="form-group">
-                        <div class="col-lg-11">
+                      
+                      <asp:UpdatePanel ID="upFechaContratacion" runat="server">
+                        <ContentTemplate>
+                          <div class="form-group">
+                            <div class="col-lg-11">
 
-                          <div class="input-group">
-                            <span class="input-group-addon excepto">Fecha Contratación :</span>
-                            <div class="row">
-                              <div class="col-lg-3">
-                                <select disabled class="form-control">
-                                  <option>01</option>
-                                  <option>02</option>
-                                </select>
+                              <div class="input-group">
+                                <span class="input-group-addon excepto">Fecha Contratación :</span>
+                                <div class="row">
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectDias" disabled class="form-control" OnSelectedIndexChanged="selectDias_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList ID="selectMeses" runat="server" disabled class="form-control" AutoPostBack="True" OnSelectedIndexChanged="selectMeses_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <asp:DropDownList runat="server" ID="selectAnios" disabled class="form-control">
+                                    </asp:DropDownList>
+                                  </div>
+                                </div>
                               </div>
-                              <div class="col-lg-3">
-                                <select disabled class="form-control">
-                                  <option>01</option>
-                                  <option>02</option>
-                                </select>
-                              </div>
-                              <div class="col-lg-4">
-                                <select disabled class="form-control">
-                                  <option>1991</option>
-                                  <option>1992</option>
-                                </select>
-                              </div>
+
                             </div>
                           </div>
+                        </ContentTemplate>
+                      </asp:UpdatePanel>
 
-                      </div>
-                    </div>
-
-<%--                      <div class="form-group">
+                      <%--                      <div class="form-group">
                         <div class="col-lg-11">
                           <span class="label-calendario" style="float:left;">Fecha de Contratación : </span>
                           <asp:UpdatePanel ID="UpdatePanel2" runat="server">

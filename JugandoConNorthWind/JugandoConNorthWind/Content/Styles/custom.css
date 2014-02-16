@@ -5,11 +5,19 @@ form input.form-control:invalid
 {
     box-shadow: 0 0 5px #d45252;
     border: 1px solid #b03535;
-    background: #ffb8b8;
+    background: #ffb8b8 url(/Content/Imagenes/invalid.png) no-repeat 98% center;
 }
 
+form input.form-control:valid:focus
+{
+    background: #fff url(/Content/Imagenes/valid.png) no-repeat 98% center;
+}
 
+form textarea.form-control:valid:focus
+{
 
+    background: #fff url(/Content/Imagenes/valid.png) no-repeat 95% center;
+}
 span.elemento-requerido
 {
     font-size: 3.2em;
@@ -85,6 +93,8 @@ table.calendario-control tbody tr:first-child, table.calendario-control tbody tr
     display: inline-block;
 }
 
+
+/*Span de Fechas*/
 .col-lg-11 .input-group span.input-group-addon.excepto
 {
     width: 40%;
