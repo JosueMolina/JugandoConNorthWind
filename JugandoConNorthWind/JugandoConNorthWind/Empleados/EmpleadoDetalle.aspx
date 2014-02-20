@@ -140,23 +140,7 @@
                       </div>
 
                       
-                      
-                          <div class="form-group">
-                            <div class="col-lg-11">
-
-                              <div class="input-group">
-                                <span class="input-group-addon excepto">Fecha Contratación :</span>
-                                <div class="row">
-                                  <%--Espacio para el control de los combos de fechas--%>
-                                  <%@ Register Src="~/UsersControls/CombosFechaControl.ascx" TagPrefix="control" TagName="CombosFechaControlContratacion" %>
-                                  <control:CombosFechaControlContratacion runat="server" id="CombosFechaControlContratacion" />
-                                </div>
-                              </div>
-
-                            </div>
-                          </div>
-
-                      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                      <asp:UpdatePanel ID="upFechaContratacion" runat="server">
                         <ContentTemplate>
                           <div class="form-group">
                             <div class="col-lg-11">
@@ -164,8 +148,18 @@
                               <div class="input-group">
                                 <span class="input-group-addon excepto">Fecha Contratación :</span>
                                 <div class="row">
-                                  <%--Espacio para el control de los combos de fechas--%>
-                                  <asp:PlaceHolder runat="server" ID="PHFNacimiento" />  
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectDias" disabled class="form-control" OnSelectedIndexChanged="selectDias_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList ID="selectMeses" runat="server" disabled class="form-control" AutoPostBack="True" OnSelectedIndexChanged="selectMeses_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <asp:DropDownList runat="server" ID="selectAnios" disabled class="form-control">
+                                    </asp:DropDownList>
+                                  </div>
                                 </div>
                               </div>
 
@@ -174,7 +168,7 @@
                         </ContentTemplate>
                       </asp:UpdatePanel>
 
-                      <%--<div class="form-group">
+                      <%--                      <div class="form-group">
                         <div class="col-lg-11">
                           <span class="label-calendario" style="float:left;">Fecha de Contratación : </span>
                           <asp:UpdatePanel ID="UpdatePanel2" runat="server">
@@ -226,26 +220,35 @@
                         </div>
                       </div>
                       
-                      <asp:UpdatePanel runat="server" ID="UPFechaNacimiento">
-                        <ContentTemplate>
+                      <div class="form-group">
+                        <div class="col-lg-11">
 
-                          <div class="form-group">
-                            <div class="col-lg-11">
-
-                              <div class="input-group">
-                                <span class="input-group-addon excepto">Fecha de Nacimento :</span>
-                                <div class="row">
-                                  <%@ Register Src="~/UsersControls/CombosFechaControl.ascx" TagPrefix="controlNacimiento" TagName="CombosFechaControlNacimiento" %>
-                                  <controlNacimiento:CombosFechaControlNacimiento runat="server" id="CombosFechaControlNacimiento" />
-                                </div>
+                          <div class="input-group">
+                            <span class="input-group-addon excepto">Fecha de Nacimento :</span>
+                            <div class="row">
+                              <div class="col-lg-3">
+                                <select disabled class="form-control">
+                                  <option>01</option>
+                                  <option>02</option>
+                                </select>
                               </div>
-
+                              <div class="col-lg-3">
+                                <select disabled class="form-control">
+                                  <option>01</option>
+                                  <option>02</option>
+                                </select>
+                              </div>
+                              <div class="col-lg-4">
+                                <select disabled class="form-control">
+                                  <option>1991</option>
+                                  <option>1992</option>
+                                </select>
+                              </div>
                             </div>
                           </div>
 
-                        </ContentTemplate> 
-                      </asp:UpdatePanel>
-
+                      </div>
+                    </div>
 
                      <%-- <div class="form-group">
                         <label for="inputPhotoPath" class="col-lg-4 control-label">Ruta de Foto : </label>

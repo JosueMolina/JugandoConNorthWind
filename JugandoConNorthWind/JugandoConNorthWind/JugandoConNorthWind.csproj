@@ -276,7 +276,6 @@
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
     <Content Include="UsersControls\AvisoModalsControl.ascx" />
-    <Content Include="UsersControls\CombosFechaControl.ascx" />
     <Content Include="ViewSwitcher.ascx" />
     <Content Include="Web.config" />
     <Content Include="Bundle.config" />
@@ -347,7 +346,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Helpers\HelperFechas.cs" />
     <Compile Include="ModeloNorthWind\Categories.cs">
       <DependentUpon>NorthWindDBEntities.tt</DependentUpon>
     </Compile>
@@ -436,13 +434,6 @@
     </Compile>
     <Compile Include="UsersControls\AvisoModalsControl.ascx.designer.cs">
       <DependentUpon>AvisoModalsControl.ascx</DependentUpon>
-    </Compile>
-    <Compile Include="UsersControls\CombosFechaControl.ascx.cs">
-      <DependentUpon>CombosFechaControl.ascx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="UsersControls\CombosFechaControl.ascx.designer.cs">
-      <DependentUpon>CombosFechaControl.ascx</DependentUpon>
     </Compile>
     <Compile Include="ViewSwitcher.ascx.cs">
       <DependentUpon>ViewSwitcher.ascx</DependentUpon>

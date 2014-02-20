@@ -10,7 +10,7 @@
     $botonDesplegarFormulario.on("click", function (e) {
         $ContFormAgregarProveedor.slideToggle();
         var valorBoton = '<span class="glyphicon glyphicon-plus-sign pull-left"></span> Agregar Proveedor';
-        var valorBoton2 = '<span class="glyphicon glyphicon-minus-sign pull-left"></span> Ocultar Formulario';
+        var valorBoton2 = '<span class="glyphicon glyphicon-minus-sign pull-left"></span> Ocultar Formulario'
         $(this).html($(this).html() == valorBoton ? valorBoton2 : valorBoton);
     });
 

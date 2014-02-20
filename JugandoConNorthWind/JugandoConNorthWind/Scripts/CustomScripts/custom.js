@@ -22,7 +22,7 @@
         var form = $("#formulario");
         form.validate({
             showErrors: function (errorMap, errorList) {
-                var length = errorList.length;
+                var i, length = errorList.length;
                 var element, mensajeError;
                 for (var i = 0; i < length; i++) {
                     element = errorList[i].element;
