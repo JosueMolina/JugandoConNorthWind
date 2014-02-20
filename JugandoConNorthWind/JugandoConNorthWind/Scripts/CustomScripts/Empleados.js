@@ -10,8 +10,8 @@
     $botonDesplegarFormulario.on("click", function (e) {
         $ContFormAgregarEmpleado.slideToggle();
         var valorBoton = '<span class="glyphicon glyphicon-plus-sign pull-left"></span> Agregar Empleado';
-        var valorBoton2 = '<span class="glyphicon glyphicon-minus-sign pull-left"></span> Ocultar Formulario'
-        $(this).html($(this).html() == valorBoton ? valorBoton2 : valorBoton);
+        var valorBoton2 = '<span class="glyphicon glyphicon-minus-sign pull-left"></span> Ocultar Formulario';
+        $(this).html($(this).html() === valorBoton ? valorBoton2 : valorBoton);
     });
 
     $btnCancelar.on("click", function (e) { e.preventDefault(); $botonDesplegarFormulario.trigger("click"); });
