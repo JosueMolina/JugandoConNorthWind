@@ -152,7 +152,6 @@
                                   <control:CombosFechaControlContratacion runat="server" id="CombosFechaControlContratacion" />
                                 </div>
                               </div>
-
                             </div>
                           </div>
 
