@@ -148,40 +148,31 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputRegión;
         
         /// <summary>
-        /// Control upFechaContratacion.
+        /// Control CombosFechaControlContratacion.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.UpdatePanel upFechaContratacion;
+        protected global::JugandoConNorthWind.UsersControls.CombosFechaControl CombosFechaControlContratacion;
         
         /// <summary>
-        /// Control selectDias.
+        /// Control UpdatePanel1.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selectDias;
+        protected global::System.Web.UI.UpdatePanel UpdatePanel1;
         
         /// <summary>
-        /// Control selectMeses.
+        /// Control PHFNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selectMeses;
-        
-        /// <summary>
-        /// Control selectAnios.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.DropDownList selectAnios;
+        protected global::System.Web.UI.WebControls.PlaceHolder PHFNacimiento;
         
         /// <summary>
         /// Control inputPostalCode.
@@ -227,6 +218,24 @@ namespace JugandoConNorthWind.Empleados {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlTextArea inputNotes;
+        
+        /// <summary>
+        /// Control UPFechaNacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPFechaNacimiento;
+        
+        /// <summary>
+        /// Control CombosFechaControlNacimiento.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::JugandoConNorthWind.UsersControls.CombosFechaControl CombosFechaControlNacimiento;
         
         /// <summary>
         /// Control phMensajeErrorEditar.
