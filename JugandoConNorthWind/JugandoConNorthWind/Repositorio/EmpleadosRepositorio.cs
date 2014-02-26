@@ -103,5 +103,35 @@ namespace JugandoConNorthWind.Repositorio
             }
             return eliminado;
         }
+
+        public bool EditarEmpleado(string idEmpleado, EmpleadosDTO empleadoDTO)
+        {
+            Employees empleado = ObtenerEmpleado(idEmpleado);
+            bool editado = false;
+            if(empleado != null)
+            {
+                empleado.FirstName = empleadoDTO.FirstName;
+                empleado.LastName = empleadoDTO.LastName;
+                empleado.Title = empleadoDTO.Title;
+                empleado.TitleOfCourtesy = empleadoDTO.TitleOfCourtesy;
+                empleado.BirthDate = empleadoDTO.BirthDate;
+                empleado.HireDate = empleadoDTO.HireDate;
+                empleado.Address = empleado.Address;
+                empleado.City = empleadoDTO.City;
+                empleado.Country = empleadoDTO.Country;
+                empleado.Notes = empleadoDTO.Notes;
+                empleado.HomePhone = empleadoDTO.HomePhone;
+                empleado.Extension = empleadoDTO.Extension;
+                empleado.Photo = empleadoDTO.Photo;
+                empleado.PhotoPath = empleadoDTO.PhotoPath;
+                empleado.PostalCode = empleadoDTO.PostalCode;
+                empleado.Region = empleadoDTO.Region;
+
+                if (_context.SaveChanges() > 0)
+                    editado = true;
+            }
+
+            return editado;
+        }
     }
 }

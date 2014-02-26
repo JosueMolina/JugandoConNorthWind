@@ -7,7 +7,12 @@ using System.Web.UI.WebControls;
 using JugandoConNorthWind.Repositorio;
 using JugandoConNorthWind.ModeloNorthWind;
 using JugandoConNorthWind.Helpers;
+using JugandoConNorthWind.ModeloNorthWind;
+using JugandoConNorthWind.ClasesDTO;
+using System.ComponentModel.DataAnnotations;
 using System.IO;
+
+
 
 namespace JugandoConNorthWind.Empleados
 {
@@ -15,7 +20,10 @@ namespace JugandoConNorthWind.Empleados
     {
         string idEmpleado;
         EmpleadosRepositorio _emCRUD = new EmpleadosRepositorio(new NorthwindEntities());
-
+        Employees empleado;
+        List<string> errores = new List<string>();
+        byte[] arregloImagen;
+        DropDownList[] ListaSelects;
         protected override void OnPreInit(EventArgs e)
         {
             base.OnPreInit(e);
@@ -29,7 +37,7 @@ namespace JugandoConNorthWind.Empleados
             if (idEmpleado == "-1")
                 Response.Redirect("~/Empleados/Empleados.aspx");
 
-            Employees empleado = _emCRUD.ObtenerEmpleado(idEmpleado);   
+            empleado = _emCRUD.ObtenerEmpleado(idEmpleado);   
 
             //Ver si existe el Empleado con ese Id
             if (empleado == null)
@@ -43,13 +51,12 @@ namespace JugandoConNorthWind.Empleados
             AvisoModalsControl.mensajeExitoso = "Registro Eliminado Exitosamente.";
             AvisoModalsControl.mensajeExitosoAlternativo = "Registro Editado Correctamente";
 
-            PHFNacimiento.HacerCombos();
 
             //Pasando los datos a los controles
             if (!IsPostBack)
             {
-                PHFNacimiento.CargarCombosFechas();
-                PHFNacimiento.VerificarFecha();
+                CargarCombos();
+
                 if (!DatosAControles(empleado))
                 {
                     Label label = new Label();
@@ -58,13 +65,22 @@ namespace JugandoConNorthWind.Empleados
                     System.Threading.Thread.Sleep(3000);
                     Response.Redirect("~/Empleados/Empleados.aspx");
                 }
-            }
-            else
-            {
-                PHFNacimiento.HabilitarCombos();
+
+                HelperFechas.DefinirFechaPredefinida(Convert.ToDateTime(empleado.HireDate),
+                selectDias, selectMeses, selectAnios);
+
+                HelperFechas.DefinirFechaPredefinida(Convert.ToDateTime(empleado.BirthDate),
+                selectDias2, selectMeses2, selectAnios2);
             }
 
-            PHFNacimiento.CargarFechaPredefinida(Convert.ToDateTime(empleado.BirthDate));
+            ListaSelects = new DropDownList[]
+            {
+                selectDias, selectMeses, selectAnios,
+                selectDias2, selectMeses2, selectAnios2
+            };
+
+
+
         }
 
         public bool DatosAControles(Employees empleado)
@@ -84,6 +100,10 @@ namespace JugandoConNorthWind.Empleados
                 inputHomePhone.Value = empleado.HomePhone ?? "";
                 inputExtension.Value = empleado.Extension ?? "";
                 inputNotes.Value = empleado.Notes ?? "";
+                HelperFechas.DefinirFechaPredefinida(Convert.ToDateTime(empleado.HireDate),
+                selectDias, selectMeses, selectAnios);
+                HelperFechas.DefinirFechaPredefinida(Convert.ToDateTime(empleado.BirthDate),
+                selectDias2, selectMeses2, selectAnios2);
 
                 if (empleado.Photo != null)
                 {
@@ -112,6 +132,129 @@ namespace JugandoConNorthWind.Empleados
         public void retornoUrl(object sender, EventArgs e)
         {
             Response.Redirect("~/Empleados/Empleados.aspx");
+        }
+
+        public void CargarCombos()
+        {
+            selectDias.CargarDias();
+            selectMeses.CargarMeses();
+            selectAnios.CargarAnios();
+
+            selectDias2.CargarDias();
+            selectMeses2.CargarMeses();
+            selectAnios2.CargarAnios();
+        }
+
+        protected void btnGuardar_Click(object sender, EventArgs e)
+        {
+            EmpleadosDTO empleadoDTO = ControlesADatos();
+
+            if (empleadoDTO == null || errores.Count > 0)
+            {
+                Label label = new Label();
+                label.Text = "No se pudo Editar el empleado";
+                phMensajeErrorEditar.Controls.Add(label);
+
+                if (errores.Count > 0)
+                {
+                    foreach (string error in errores)
+                    {
+                        phMensajeErrorEditar.Controls.Add(new LiteralControl("<br />"));
+                        Label _label = new Label();
+                        label.Text = error;
+                        phMensajeErrorEditar.Controls.Add(_label);
+                    }
+                }
+            }
+            else 
+            {
+                if (_emCRUD.EditarEmpleado(idEmpleado, empleadoDTO))
+                {
+                    toastrLiteral.Text = "<script> toastr.info('Empleado Editado Correctamente');</script>";
+                    empleado = _emCRUD.ObtenerEmpleado(empleado.EmployeeID.ToString());
+                    DatosAControles(empleado);
+                }
+                else 
+                {
+                    Label label = new Label();
+                    label.Text = "No se pude editar el empleado";
+                    phMensajeErrorEditar.Controls.Add(label);
+                }
+            }
+        }
+
+        public EmpleadosDTO ControlesADatos()
+        {
+            EmpleadosDTO empleadoDTO = new EmpleadosDTO();
+
+            try
+            {
+                DateTime fecha;
+
+                empleadoDTO.FirstName = inputFirstName.Value;
+                empleadoDTO.LastName = inputLastName.Value;
+                empleadoDTO.TitleOfCourtesy = inputTitleOfCourtesy.Value;
+                empleadoDTO.Title = inputTitle.Value;
+                empleadoDTO.BirthDate = HelperFechas.FechaDesdeCombo(out fecha, selectDias2, selectMeses2, selectAnios2) ? fecha : DateTime.Now;
+                empleadoDTO.HireDate = HelperFechas.FechaDesdeCombo(out fecha, selectDias, selectMeses, selectAnios) ? fecha : DateTime.Now;
+                empleadoDTO.Address = inputAdress.Value;
+                empleadoDTO.City = inputCity.Value;
+                empleadoDTO.Region = inputRegión.Value;
+                empleadoDTO.PostalCode = inputPostalCode.Value;
+                empleadoDTO.Country = inputCountry.Value;
+                empleadoDTO.HomePhone = inputHomePhone.Value;
+                empleadoDTO.Extension = inputExtension.Value;
+                CapturarArregloImagen();
+                empleadoDTO.Photo = arregloImagen;
+                empleadoDTO.Notes = inputNotes.Value;
+                empleadoDTO.PhotoPath = "http://accweb/employees/" + inputLastName.Value + inputFirstName.Value + ".jpg";
+
+                var context = new ValidationContext(empleadoDTO, serviceProvider: null, items: null);
+                List<ValidationResult> results = new List<ValidationResult>();
+                bool isValid = Validator.TryValidateObject(empleadoDTO, context, results);
+
+                if (!isValid)
+                {
+                    foreach (ValidationResult result in results)
+                    {
+                        errores.Add(result.ErrorMessage);
+                    }
+
+                    return null;
+                }
+
+            }
+            catch (Exception)
+            {}
+
+            return empleadoDTO;
+        }
+
+        public void CapturarArregloImagen() 
+        {
+            if (inputFileImagen.HasFile)
+            {
+                if (inputFileImagen.PostedFile.ContentType == "image/jpeg" ||
+                   inputFileImagen.PostedFile.ContentType == "image/png" &&
+                   inputFileImagen.PostedFile.ContentLength < 102400)
+                {
+                    arregloImagen = inputFileImagen.FileBytes;
+                }
+            }
+            else 
+            {
+                arregloImagen = empleado.Photo;
+            }
+        }
+
+        protected void combos_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ListaSelects.HabilitarCombos();
+        }
+
+        public void CargarValores(object sender, EventArgs e)
+        {
+            DatosAControles(empleado);
         }
 
     }

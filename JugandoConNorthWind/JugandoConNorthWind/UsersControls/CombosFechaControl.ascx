@@ -2,11 +2,11 @@
 <asp:UpdatePanel ID="upFechaContratacion" runat="server">
 <ContentTemplate>
 <div class="col-lg-3">
-  <asp:DropDownList runat="server" AutoPostBack="true" ID="selectDias" disabled class="form-control" OnSelectedIndexChanged="selectMeses_SelectedIndexChanged">
+  <asp:DropDownList runat="server" ID="selectDias" disabled class="form-control">
   </asp:DropDownList>
 </div>
 <div class="col-lg-3">
-  <asp:DropDownList ID="selectMeses" runat="server" disabled class="form-control" AutoPostBack="True" OnSelectedIndexChanged="selectMeses_SelectedIndexChanged">
+  <asp:DropDownList ID="selectMeses" runat="server" disabled class="form-control">
   </asp:DropDownList>
 </div>
 <div class="col-lg-4">

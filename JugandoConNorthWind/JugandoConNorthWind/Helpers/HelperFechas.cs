@@ -168,5 +168,93 @@ namespace JugandoConNorthWind.Helpers
             _ddlDias.Attributes.Remove("disabled");
             _ddlMeses.Attributes.Remove("disabled");
         }
+
+        //Para Combos Independientes
+
+        public static void CargarDias(this DropDownList dpl)
+        {
+            string indice;
+            for (int i = 1; i <= 31; i++)
+            {
+                indice = i < 10 ? "0" + i.ToString() : i.ToString();
+                dpl.Items.Add(new ListItem(indice,indice));
+            }
+        }
+
+        public static void CargarMeses(this DropDownList dpl)
+        {
+            string indice;
+            for (int i = 1; i <= 12; i++)
+            {
+                indice = i < 10 ? "0" + i.ToString() : i.ToString();
+                dpl.Items.Add(new ListItem(indice, indice));
+            }
+        }
+
+        public static void CargarAnios(this DropDownList dpl)
+        {
+            string indice;
+
+            for (int i = 1950; i <= DateTime.Now.Year; i++)
+            {
+                indice = i.ToString();
+                dpl.Items.Add(new ListItem(indice, indice));
+            }
+        }
+
+        public static bool VerificarFecha(DropDownList Dia, 
+            DropDownList Mes, DropDownList Anio)
+        {
+            string fechaAEvaluar = String.Format("{0}/{1}/{2}",
+            Dia.SelectedValue,Mes.SelectedValue,Anio.SelectedValue);
+            DateTime fecha;
+
+            bool verificada = false;
+            verificada = DateTime.TryParse(fechaAEvaluar, out fecha);
+
+            return verificada;
+        }
+
+        public static bool DefinirFechaPredefinida(DateTime fecha,
+            DropDownList Dia, DropDownList Mes, DropDownList Anio)
+        {
+            bool convertida = false;
+
+            try
+            {
+                string _Dia = fecha.Day.ToString();
+                string _Mes = fecha.Month.ToString();
+                string _Anio = fecha.Year.ToString();
+
+                Dia.SelectedValue = _Dia.Length < 2 ? "0" + _Dia : _Dia;
+                Mes.SelectedValue = _Mes.Length < 2 ? "0" + _Mes : _Mes;
+                Anio.SelectedValue = _Anio.Length < 2 ? "0" + _Anio : _Anio;
+
+                convertida = true;
+            }
+            catch (Exception){}
+
+            return convertida;
+        }
+
+        public static bool FechaDesdeCombo(out DateTime fecha, 
+            DropDownList Dia, DropDownList Mes, DropDownList Anio)
+        {
+            bool convertida = false;
+
+            convertida = DateTime.TryParse(String.Format("{0}/{1}/{2}", 
+            Dia.SelectedValue, Mes.SelectedValue, Anio.SelectedValue), out fecha);
+
+            return convertida;
+        }
+
+        public static void HabilitarCombos(this DropDownList[] ddlLista)
+        {
+            foreach (DropDownList dpl in ddlLista)
+            {
+                dpl.Attributes.Remove("disabled");
+            }
+        }
+
     }
 }

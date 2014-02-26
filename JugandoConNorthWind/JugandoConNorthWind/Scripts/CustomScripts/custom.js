@@ -40,14 +40,9 @@
     });
 
     $botonCancelar.on("click", function (e) {
-        e.preventDefault();
+        //e.preventDefault();
 
-        $("input").attr("disabled", true);
-        $("textarea").attr("disabled", true);
-        $("select").attr("disabled", true);
-        $botonesEditando.fadeOut(200, function () {
-            $botonesOpciones.fadeIn(200);
-        });
+        
     });
 
 })(jQuery, Window, undefined);

@@ -22,8 +22,9 @@
                   <a data-target="#modalAviso" data-toggle="modal" class="btn btn-primary col-md-5 col-md-offset-1 btn-danger" id="btnEliminar">Eliminar</a>
                 </div>
                 <div class="col-md-6 pull-right" id="Guardar-Cancelar" style="display: none;">
-                  <asp:LinkButton runat="server" class="col-md-5 btn btn-default btn-primary btn-info" ID="btnGuardar">Guardar</asp:LinkButton>
-                  <a runat="server" class="btn btn-primary col-md-5 col-md-offset-1" id="btnCancelar">Cancelar</a>
+                  <asp:LinkButton runat="server" class="col-md-5 btn btn-default btn-primary btn-info" ID="btnGuardar" OnClick="btnGuardar_Click">Guardar</asp:LinkButton>
+                  <asp:LinkButton runat="server" ID="btnCancelar" class="btn btn-primary col-md-5 col-md-offset-1" OnClick="CargarValores">Cancelar</asp:LinkButton>
+                  <%--<a runat="server" onserverclick="CargarValores" class="btn btn-primary col-md-5 col-md-offset-1" id="btnCancelar">Cancelar</a>--%>
                   <button style="display: none;" type="submit" id="btnSubmit">Submit</button>
                 </div>
               </div>
@@ -139,50 +140,34 @@
                         </div>
                       </div>
 
-                      
-                      
-                          <div class="form-group">
-                            <div class="col-lg-11">
-
-                              <div class="input-group">
-                                <span class="input-group-addon excepto">Fecha Contratación :</span>
-                                <div class="row">
-                                  <%--Espacio para el control de los combos de fechas--%>
-                                  <%@ Register Src="~/UsersControls/CombosFechaControl.ascx" TagPrefix="control" TagName="CombosFechaControlContratacion" %>
-                                  <control:CombosFechaControlContratacion runat="server" id="CombosFechaControlContratacion" />
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-
-                      <asp:UpdatePanel ID="UpdatePanel1" runat="server">
+                      <asp:UpdatePanel ID="UPFechaContratacion" runat="server">
                         <ContentTemplate>
+
                           <div class="form-group">
                             <div class="col-lg-11">
 
                               <div class="input-group">
                                 <span class="input-group-addon excepto">Fecha Contratación :</span>
                                 <div class="row">
-                                  <%--Espacio para el control de los combos de fechas--%>
-                                  <asp:PlaceHolder runat="server" ID="PHFNacimiento" />  
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectDias" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList ID="selectMeses" AutoPostBack="true" runat="server" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectAnios" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
                                 </div>
                               </div>
-
                             </div>
                           </div>
+
                         </ContentTemplate>
                       </asp:UpdatePanel>
-
-                      <%--<div class="form-group">
-                        <div class="col-lg-11">
-                          <span class="label-calendario" style="float:left;">Fecha de Contratación : </span>
-                          <asp:UpdatePanel ID="UpdatePanel2" runat="server">
-                            <ContentTemplate>
-                              <asp:Calendar ForeColor="White" TitleStyle-BackColor="Transparent" class="calendario-control" ID="CalendarioHireDate" runat="server" SelectedDayStyle-BackColor="#27C2EF" SelectedDayStyle-ForeColor="White" SelectedDate="12/12/1991"></asp:Calendar>
-                            </ContentTemplate>
-                          </asp:UpdatePanel>
-                        </div>
-                      </div>--%>
 
                     </div>
                     <!--Fin de la Primera Columna-->
@@ -211,7 +196,7 @@
                         <div class="col-lg-11">
                         <div class="input-group foto">
                           <span class="input-group-addon" style="width: 37%;">Foto : </span>
-                          <asp:FileUpload Width="97%" disabled runat="server" class="form-control" ID="inputFileImagen" /><!--<img alt="" onclick="return false;" src="" ID="Imagen" runat="server" />-->
+                          <asp:FileUpload Width="97%" disabled runat="server" class="form-control" ID="inputFileImagen" /><img alt="" src="" ID="Imagen" runat="server" style="display: none;" />
                         </div>
                         </div>
                       </div>
@@ -234,8 +219,18 @@
                               <div class="input-group">
                                 <span class="input-group-addon excepto">Fecha de Nacimento :</span>
                                 <div class="row">
-                                  <%@ Register Src="~/UsersControls/CombosFechaControl.ascx" TagPrefix="controlNacimiento" TagName="CombosFechaControlNacimiento" %>
-                                  <controlNacimiento:CombosFechaControlNacimiento runat="server" id="CombosFechaControlNacimiento" />
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectDias2" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-3">
+                                    <asp:DropDownList ID="selectMeses2" AutoPostBack="true" runat="server" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
+                                  <div class="col-lg-4">
+                                    <asp:DropDownList runat="server" AutoPostBack="true" ID="selectAnios2" disabled class="form-control" OnSelectedIndexChanged="combos_SelectedIndexChanged">
+                                    </asp:DropDownList>
+                                  </div>
                                 </div>
                               </div>
 
@@ -244,27 +239,6 @@
 
                         </ContentTemplate> 
                       </asp:UpdatePanel>
-
-
-                     <%-- <div class="form-group">
-                        <label for="inputPhotoPath" class="col-lg-4 control-label">Ruta de Foto : </label>
-                        <div class="col-lg-7">
-                          <input runat="server" type="text" class="form-control" id="inputPhotoPath" placeholder="Ruta de Foto" />
-                        </div>
-                      </div>--%>
-
-<%--                      <div class="form-group">
-                        <div class="col-lg-11">
-                              <span class="label-calendario" style="float:left;">Fecha de Nacimiento :</span>
-                              <asp:UpdatePanel ID="UpdatePanel1" runat="server">
-                                <ContentTemplate>
-                                  <asp:Calendar ForeColor="White" TitleStyle-BackColor="Transparent" class="calendario-control" runat="server" ID="CalendarioBirthDate" SelectedDayStyle-BackColor="#27C2EF" SelectedDayStyle-ForeColor="White" SelectedDate="12/12/1991 "></asp:Calendar>
-                                </ContentTemplate>
-                              </asp:UpdatePanel>
-                            </div>
-                        </div>
-                      </div>--%>
-
 
                     </div>
                     <!--Fin de la Segunda Columna-->
@@ -293,8 +267,10 @@
   <script src="../Scripts/jquery-2.1.0.min.js"></script>
   <script src="../Scripts/Bootstrap/bootstrap.min.js"></script>
   <script src="../Scripts/Plugins/jquery.validate.js"></script>
+  <script src="../Scripts/Plugins/toastr.js"></script>
   <script src="../Scripts/Plugins/additional-methods.js"></script>
   <script src="../Scripts/CustomScripts/custom.js"></script>
 
   <asp:Literal ID="EjecutarModel" runat="server" />
+  <asp:Literal ID="toastrLiteral" runat="server" />
 </asp:Content>

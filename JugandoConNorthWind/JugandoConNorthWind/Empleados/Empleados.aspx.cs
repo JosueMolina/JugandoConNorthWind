@@ -100,7 +100,7 @@ namespace JugandoConNorthWind.Empleados
             if (empleadoDTO == null || errores.Count > 0)
             {
                 Label _label = new Label();
-                _label.Text = "No se guardar el empleado";
+                _label.Text = "No se pudo guardar el empleado";
                 phMensajeErrorEditar.Controls.Add(_label);
 
                 if (errores.Count > 0)
