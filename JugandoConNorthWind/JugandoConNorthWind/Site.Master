@@ -14,7 +14,7 @@
 <body>
   <div class="jumbotron">
     <div class="container">
-      <h1>NorthWind - <%: @Page.Title %></h1>
+      <h1><a href="/Default.aspx">NorthWind</a> - <%: @Page.Title %></h1>
     </div>
   </div>
   <asp:ContentPlaceHolder ID="MainPlaceHolder" runat="server" />

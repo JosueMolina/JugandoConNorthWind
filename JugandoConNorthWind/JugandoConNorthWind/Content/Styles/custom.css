@@ -1,5 +1,5 @@
-﻿::-webkit-input-placeholder{color:black !important;}
-::-moz-placeholder{color:black;}
+﻿::-webkit-input-placeholder{color:#666 !important;}
+::-moz-placeholder{color:#666;}
 
 form input.form-control:invalid   
 {
@@ -18,6 +18,13 @@ form textarea.form-control:valid:focus
 
     background: #fff url(/Content/Imagenes/valid.png) no-repeat 95% center;
 }
+
+.formBuscarEmpleado
+{
+    background-color: white;
+    padding: 20px 0px 1px 0 !important;
+}
+
 span.elemento-requerido
 {
     font-size: 3.2em;
@@ -81,7 +88,8 @@ table.calendario-control tbody tr,
 table.calendario-control tbody tr td a
 {
 }
-table.calendario-control tbody tr:first-child, table.calendario-control tbody tr:first-child td
+table.calendario-control tbody tr:first-child, 
+table.calendario-control tbody tr:first-child td
 {
     border: 0px solid transparent !important;
     background: #27c2ef;
@@ -98,4 +106,90 @@ table.calendario-control tbody tr:first-child, table.calendario-control tbody tr
 .col-lg-11 .input-group span.input-group-addon.excepto
 {
     width: 40%;
+}
+
+.paddingLeft1em
+{
+    padding-left: 1em;
+}
+
+
+tr:hover
+{
+    background: #27c2ef !important;
+    color: #ffffff !important; 
+    cursor:pointer;
+}
+
+tr td a.glyphicon
+{
+    -moz-transition: all linear .1s;
+    -o-transition: all linear .1s;
+    -webkit-transition: all linear .1s;
+    transition: all linear .1s;
+}
+tr td:hover a.glyphicon
+{
+    font-size: 2em;
+    margin-right: -1em;
+    text-decoration: none;
+}
+
+tr.paginator td 
+{
+    height: 2em;
+    background: #27c2ef;
+}
+
+tr.paginator td table td
+{
+    background: #27c2ef;
+    color: #fff;
+    padding-left: 10px;
+    padding-right: 10px;
+    display: inline-block;
+}
+
+tr.paginator td table tbody tr td a
+{
+    display:block;
+}
+
+tr.paginator td table td:hover, tr.paginator td table td:hover a
+{
+    text-decoration:none;
+    color: #444;
+    background: white;
+    display: inline-block;
+}
+
+.gridListaEmpleados
+{
+    border-width: 0px !important;
+}
+
+.headerGridStyle
+{
+    padding-left: 1em;
+    border-bottom: 2px solid #eee;
+}
+
+.customInput
+{
+    border: 2px solid #27c2ef;
+}
+
+
+.btnListarTodos
+{
+    background:#f6f6f6; 
+    color: #999999; 
+    text-shadow: none; 
+    border: 1px solid #dddddd;
+}
+.btnListarTodos:hover
+{
+    background:#27c2ef;
+    color: white;
+    border: 1px solid #dddddd;
 }

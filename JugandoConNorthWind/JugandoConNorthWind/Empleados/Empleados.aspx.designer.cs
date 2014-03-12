@@ -13,31 +13,40 @@ namespace JugandoConNorthWind.Empleados {
     public partial class Empleados {
         
         /// <summary>
-        /// Control formPrincipal.
+        /// Control formulario.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlForm formPrincipal;
+        protected global::System.Web.UI.HtmlControls.HtmlForm formulario;
         
         /// <summary>
-        /// Control BuscarEmpleadoInput.
+        /// Control sm.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox BuscarEmpleadoInput;
+        protected global::System.Web.UI.ScriptManager sm;
         
         /// <summary>
-        /// Control A1.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        protected global::System.Web.UI.WebControls.LinkButton btnGuardar;
+        
+        /// <summary>
+        /// Control btnCancelar.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.LinkButton btnCancelar;
         
         /// <summary>
         /// Control inputFirstName.
@@ -67,6 +76,15 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitle;
         
         /// <summary>
+        /// Control inputCountry.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputCountry;
+        
+        /// <summary>
         /// Control inputTitleOfCourtesy.
         /// </summary>
         /// <remarks>
@@ -76,22 +94,13 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputTitleOfCourtesy;
         
         /// <summary>
-        /// Control inputBirthDate.
+        /// Control inputHomePhone.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputBirthDate;
-        
-        /// <summary>
-        /// Control inputHireDate.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHireDate;
+        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHomePhone;
         
         /// <summary>
         /// Control inputAdress.
@@ -121,6 +130,42 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputRegión;
         
         /// <summary>
+        /// Control UPFechaContratacion.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.UpdatePanel UPFechaContratacion;
+        
+        /// <summary>
+        /// Control selectDias.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList selectDias;
+        
+        /// <summary>
+        /// Control selectMeses.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList selectMeses;
+        
+        /// <summary>
+        /// Control selectAnios.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList selectAnios;
+        
+        /// <summary>
         /// Control inputPostalCode.
         /// </summary>
         /// <remarks>
@@ -128,24 +173,6 @@ namespace JugandoConNorthWind.Empleados {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText inputPostalCode;
-        
-        /// <summary>
-        /// Control inputCountry.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputCountry;
-        
-        /// <summary>
-        /// Control inputHomePhone.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputHomePhone;
         
         /// <summary>
         /// Control inputExtension.
@@ -175,40 +202,49 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.HtmlControls.HtmlImage Imagen;
         
         /// <summary>
-        /// Control inputPhoto.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPhoto;
-        
-        /// <summary>
         /// Control inputNotes.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputNotes;
+        protected global::System.Web.UI.HtmlControls.HtmlTextArea inputNotes;
         
         /// <summary>
-        /// Control inputPhotoPath.
+        /// Control UPFechaNacimiento.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.HtmlControls.HtmlInputText inputPhotoPath;
+        protected global::System.Web.UI.UpdatePanel UPFechaNacimiento;
         
         /// <summary>
-        /// Control btnGuardar.
+        /// Control selectDias2.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.LinkButton btnGuardar;
+        protected global::System.Web.UI.WebControls.DropDownList selectDias2;
+        
+        /// <summary>
+        /// Control selectMeses2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList selectMeses2;
+        
+        /// <summary>
+        /// Control selectAnios2.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.DropDownList selectAnios2;
         
         /// <summary>
         /// Control phMensajeErrorEditar.
@@ -220,13 +256,49 @@ namespace JugandoConNorthWind.Empleados {
         protected global::System.Web.UI.WebControls.PlaceHolder phMensajeErrorEditar;
         
         /// <summary>
-        /// Control LVEmpleados.
+        /// Control btnListarTodos.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.ListView LVEmpleados;
+        protected global::System.Web.UI.WebControls.LinkButton btnListarTodos;
+        
+        /// <summary>
+        /// Control A1.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.HtmlControls.HtmlAnchor A1;
+        
+        /// <summary>
+        /// Control BuscarEmpleadoInput.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.TextBox BuscarEmpleadoInput;
+        
+        /// <summary>
+        /// Control AvisoModalsControl.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::JugandoConNorthWind.UsersControls.AvisoEliminarRegistroControl AvisoModalsControl;
+        
+        /// <summary>
+        /// Control GridListaEmpleados.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridListaEmpleados;
         
         /// <summary>
         /// Control ToastrLiteral.
@@ -236,5 +308,14 @@ namespace JugandoConNorthWind.Empleados {
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Literal ToastrLiteral;
+        
+        /// <summary>
+        /// Control EjecutarModel.
+        /// </summary>
+        /// <remarks>
+        /// Campo generado automáticamente.
+        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Literal EjecutarModel;
     }
 }

@@ -7,7 +7,6 @@ using System.Web.UI.WebControls;
 using JugandoConNorthWind.Repositorio;
 using JugandoConNorthWind.ModeloNorthWind;
 using JugandoConNorthWind.Helpers;
-using JugandoConNorthWind.ModeloNorthWind;
 using JugandoConNorthWind.ClasesDTO;
 using System.ComponentModel.DataAnnotations;
 using System.IO;
@@ -151,9 +150,9 @@ namespace JugandoConNorthWind.Empleados
 
             if (empleadoDTO == null || errores.Count > 0)
             {
-                Label label = new Label();
-                label.Text = "No se pudo Editar el empleado";
-                phMensajeErrorEditar.Controls.Add(label);
+                Label labelError = new Label();
+                labelError.Text = "No se pudo Editar el empleado";
+                phMensajeErrorEditar.Controls.Add(labelError);
 
                 if (errores.Count > 0)
                 {
@@ -161,7 +160,7 @@ namespace JugandoConNorthWind.Empleados
                     {
                         phMensajeErrorEditar.Controls.Add(new LiteralControl("<br />"));
                         Label _label = new Label();
-                        label.Text = error;
+                        _label.Text = error;
                         phMensajeErrorEditar.Controls.Add(_label);
                     }
                 }
@@ -208,7 +207,7 @@ namespace JugandoConNorthWind.Empleados
                 empleadoDTO.Photo = arregloImagen;
                 empleadoDTO.Notes = inputNotes.Value;
                 empleadoDTO.PhotoPath = "http://accweb/employees/" + inputLastName.Value + inputFirstName.Value + ".jpg";
-
+                
                 var context = new ValidationContext(empleadoDTO, serviceProvider: null, items: null);
                 List<ValidationResult> results = new List<ValidationResult>();
                 bool isValid = Validator.TryValidateObject(empleadoDTO, context, results);
