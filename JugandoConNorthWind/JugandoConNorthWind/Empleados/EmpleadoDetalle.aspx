@@ -13,7 +13,7 @@
             <div class="col-lg-12">
 
               <div class="col-lg-6">
-                <h1 style="display: inline;">Editar Empleado</h1>
+                <h1 style="display: inline;"><a href="Empleados.aspx"><span class="glyphicon glyphicon-circle-arrow-left"></span>  Lista de Empleados</a></h1>
               </div>
 
               <div class="col-lg-6">

@@ -302,75 +302,138 @@
     <%@ Register Src="~/UsersControls/AvisoModalsControl.ascx" TagPrefix="control" TagName="AvisoModalsControl" %>
     <control:AvisoModalsControl runat="server" ID="AvisoModalsControl" />
 
-    <!--Lista Empleados-->
-    <asp:GridView ID="GridListaEmpleados" runat="server"
-      DataKeyNames="EmployeeID"
-      AlternatingRowStyle-BackColor="#25292d"
-      AutoGenerateColumns="false"
-      CssClass="col-sm-12 gridListaEmpleados"
-      HeaderStyle-BackColor="#27c2ef"
-      HeaderStyle-ForeColor="#ffffff"
-      HeaderStyle-Height="4em"
-      HeaderStyle-CssClass="headerGridStyle"
-      AllowPaging="true"
-      PagerStyle-HorizontalAlign="Center" PagerStyle-CssClass="paginator"
-      OnPageIndexChanging="GridListaEmpleados_PageIndexChanging"
-      OnSelectedIndexChanged="GridListaEmpleados_SelectedIndexChanged"
-      OnRowCommand="GridListaEmpleados_RowCommand">
-      <Columns>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px" HeaderText="ID">
-          <ItemTemplate>
-            <span><%# Eval("EmployeeID") %></span>
-          </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px" HeaderText="First Name" ItemStyle-Height="3em">
-          <ItemTemplate>
-            <span><%# Eval("FirstName") %></span>
-          </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px" HeaderText="Last Name">
-          <ItemTemplate>
-            <span><%# Eval("LastName") %></span>
-          </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px" HeaderText="Country">
-          <ItemTemplate>
-            <span><%# Eval("Country") %></span>
-          </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px" HeaderText="City">
-          <ItemTemplate>
-            <span><%# Eval("City") %></span>
-          </ItemTemplate>
-        </asp:TemplateField>
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px">
-          <ItemTemplate>
-            <asp:LinkButton ID="BotonEditar" runat="server" CommandName="EditandoEmpleado" CommandArgument='
+      <!--Lista Empleados-->
+
+          <asp:GridView ID="GridListaEmpleados" runat="server"
+            DataKeyNames="EmployeeID"
+            AlternatingRowStyle-BackColor="#25292d"
+            AutoGenerateColumns="false"
+            CssClass="col-sm-12 gridListaEmpleados"
+            HeaderStyle-BackColor="#27c2ef"
+            HeaderStyle-ForeColor="#ffffff"
+            HeaderStyle-Height="4em"
+            HeaderStyle-CssClass="headerGridStyle"
+            AllowPaging="true"
+            PagerStyle-HorizontalAlign="Center" PagerStyle-CssClass="paginator"
+            OnPageIndexChanging="GridListaEmpleados_PageIndexChanging"
+            OnSelectedIndexChanged="GridListaEmpleados_SelectedIndexChanged"
+            OnRowCommand="GridListaEmpleados_RowCommand">
+            <Columns>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px" HeaderText="ID">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LinkButton1" OnCommand="cellClick" CommandArgument='<%# Eval("EmployeeID").ToString() %>' runat="server"> <%# Eval("EmployeeID") %> </asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px" HeaderText="First Name" ItemStyle-Height="3em">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LinkButton2" OnCommand="cellClick" CommandArgument='<%# Eval("EmployeeID").ToString() %>' runat="server"> <%# Eval("FirstName") %></asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px" HeaderText="Last Name">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LinkButton3" OnCommand="cellClick" CommandArgument='<%# Eval("EmployeeID").ToString() %>' runat="server"> <%# Eval("LastName") %></asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px" HeaderText="Country">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LinkButton4" OnCommand="cellClick" CommandArgument='<%# Eval("EmployeeID").ToString() %>' runat="server"> <%# Eval("Country") %></asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px" HeaderText="City">
+                <ItemTemplate>
+                  <asp:LinkButton ID="LinkButton5" OnCommand="cellClick" CommandArgument='<%# Eval("EmployeeID").ToString() %>' runat="server"> <%# Eval("City") %></asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px">
+                <ItemTemplate>
+                  <asp:LinkButton ID="BotonEditar" runat="server" CommandName="EditandoEmpleado" CommandArgument='
                  <%# Eval("employeeID").ToString() + ";" + Eval("FirstName").ToString() + 
                 ";" + Eval("LastName").ToString() %>'
-              class="glyphicon glyphicon-pencil pull-left">
-            </asp:LinkButton>
-          </ItemTemplate>
-        </asp:TemplateField>
+                    class="glyphicon glyphicon-pencil pull-left">
+                  </asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
 
-        <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
-          HeaderStyle-BorderWidth="0px">
-          <ItemTemplate>
-            <asp:LinkButton ID="BotonEliminar" runat="server" CommandName="EliminandoEmpleado" CommandArgument='
+              <asp:TemplateField HeaderStyle-CssClass="paddingLeft1em" ItemStyle-CssClass="paddingLeft1em" ItemStyle-BorderWidth="0px"
+                HeaderStyle-BorderWidth="0px">
+                <ItemTemplate>
+                  <asp:LinkButton ID="BotonEliminar" runat="server" CommandName="EliminandoEmpleado" CommandArgument='
                 <%# Eval("employeeID").ToString()%>'
-              class="glyphicon glyphicon-remove pull-left"></asp:LinkButton>
-          </ItemTemplate>
-        </asp:TemplateField>
+                    class="glyphicon glyphicon-remove pull-left"></asp:LinkButton>
+                </ItemTemplate>
+              </asp:TemplateField>
 
-      </Columns>
-    </asp:GridView>
-    <br />
+            </Columns>
+          </asp:GridView>
+
+          <%-- Datos del Usuario--%>
+          <!--Modal Aviso-->
+          <div class="modal fade  bs-example-modal-lg" id="modalDetalleEmpleado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-lg">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                  <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Detalle de Empleado</h4>
+                </div>
+                <div class="modal-body">
+                  <!--Contenido del Modal-->
+                  <div class="container perfilUsuario">
+                    <div class="row">
+                      <div class="col-sm-9">
+                        <div id="ImagenEmpleado" class="col-sm-2" style="margin-right: 0; background: #2e3338; text-align: center;">
+                          <img style="vertical-align: middle;" src="http://lorempixel.com/300/300" alt="Imagen Muestra" class="img-rounded">
+                        </div>
+                        <div id="InfoEmpleado" class="col-sm-10">
+                          <div id="NombreEmpleado" class="col-sm-12">
+                            <div id="Nombres">
+                              <h1 style="line-height: 0.5em;"><%= empleado.FirstName %>  <%=empleado.LastName %></h1>
+                              <h3 style="line-height: 0.5em;"><i><%= empleado.Title %></i></h3>
+                            </div>
+                            <div class="DatosEmpleado" id="telefonos">
+                              Teléfono : <i><%= empleado.HomePhone %>  &nbsp;&nbsp;</i>
+                              Extensión : <i><%= empleado.Extension %> &nbsp;&nbsp;</i>
+                              Código Postal : <i><%= empleado.PostalCode %></i><br />
+                              Pais : <i><%= empleado.Country %></i>
+                              Region : <i><%= empleado.Region %></i>
+                              Ciudad : <i><%= empleado.City %></i><br />
+                              Dirección : <i><%= empleado.Address %></i>
+                              Contratación : <i><%= Convert.ToDateTime(empleado.HireDate).ToShortDateString()%></i>
+                              Nacimiento : <i><%= Convert.ToDateTime(empleado.BirthDate).ToShortDateString() %></i>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="col-sm-9">
+                        <div id="Notas">
+                          <h2>Notas</h2>
+                          <p>
+                            <%= empleado.Notes%>
+                          </p>
+                        </div>
+                      </div>
+
+                    </div>
+                  </div>
+
+                </div>
+                <div class="modal-footer">
+                  <asp:LinkButton ID="LinkButton6" runat="server" CssClass="btn btn-info"> <span class="glyphicon glyphicon-shopping-cart "></span> Ver Ventas</asp:LinkButton>
+                  <a href="#"></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--Fin del Modal-->
+          <%--Fin de los Datos del Usuario--%>
+
+
+      <br />
 
     <%--<asp:ListView ID="LVEmpleados" runat="server" GroupItemCount="3">
       <ItemTemplate>
@@ -396,82 +459,7 @@
     <%---Fin del Container--%>
     <br />
 
-    <%-- Datos del Usuario--%>
-    <!--Modal Aviso-->
-    <div class="modal fade  bs-example-modal-lg" id="modalDetalleEmpleado" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-      <div class="modal-dialog modal-lg">
-        <div class="modal-content">
-          <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
-            <h4 class="modal-title" id="myModalLabel"><span class="glyphicon glyphicon-user"></span>&nbsp;&nbsp;&nbsp;Detalle de Empleado</h4>
-          </div>
-          <div class="modal-body">
-            <!--Contenido del Modal-->
-            <div class="container perfilUsuario">
-              <div class="row">
-                <div class="col-sm-9">
-                  <div id="ImagenEmpleado" class="col-sm-2" style="margin-right: 0; background: #2e3338; text-align: center;">
-                    <img src="http://lorempixel.com/300/300" alt="Imagen Muestra" class="img-rounded">
-                  </div>
-                  <div id="InfoEmpleado" class="col-sm-10">
-                    <div id="NombreEmpleado" class="col-sm-8">
-                      <div id="Nombres">
-                        <h1 style="line-height: 0.5em;">Kevin Molina</h1>
-                        <h3 style="line-height: 0.5em;"><i>Gerente de Ventas</i></h3>
-                      </div>
-                      <div class="DatosEmpleado" id="telefonos">
-                        Teléfono : <i>2669-5965  &nbsp;&nbsp;</i>
-                        Extensión : <i>2569 &nbsp;&nbsp;</i><br />
-                        Código Postal : <i>45889</i>
-                      </div>
-                    </div>
-                    <div id="DatosEmpleado" class="col-sm-4 DatosEmpleado">
-                      Pais : <i>USA</i>
-                      <br />
-                      Region : <i>California</i>
-                      <br />
-                      Ciudad : <i>San Francisco</i>
-                      <br />
-                      Dirección : <i>908 W. Capital Way</i>
-                      <br />
-                      Contratación : <i>05/12/92</i>
-                      <br />
-                      Nacimiento : <i>02/02/1962</i>
-                      <br />
-                    </div>
-                  </div>
-                </div>
-                <div class="col-sm-9">
-                  <div id="Notas">
-                    <h2>Notas</h2>
-                    <p>
-                      Andrew received his BTS commercial in 1974 and a Ph.D. in international marketing from the 
-                      University of Dallas in 1981.  He is fluent in French and Italian and reads German.  He joined 
-                      the company as a sales representative, was promoted to sales manager in January 1992 and to 
-                      vice president of sales in March 1993.  Andrew is a member of the Sales Management Roundtable, 
-                      the Seattle Chamber of Commerce, and the Pacific Rim Importers Association.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-            <br />
-          </div>
-          <div class="modal-footer">
-            <asp:LinkButton runat="server" CssClass="btn btn-info"> <span class="glyphicon glyphicon-shopping-cart "></span> Ver Ventas</asp:LinkButton>
-            <a href="#"></a>
-          </div>
-        </div>
-      </div>
-    </div>
-    <!--Fin del Modal-->
-    <%--Fin de los Datos del Usuario--%>
+
 
     <script src="../Scripts/jquery-2.1.0.min.js"></script>
     <script src="../Scripts/Bootstrap/bootstrap.min.js"></script>
@@ -483,8 +471,6 @@
     <%--Uso de Toastr--%>
     <asp:Literal runat="server" ID="ToastrLiteral"></asp:Literal>
     <asp:Literal ID="EjecutarModel" runat="server" />
-    <script>
-      $("#modalDetalleEmpleado").modal('toggle');
-    </script>
+    <asp:Literal ID="EjecutarModelDetalle" runat="server" />
   </form>
 </asp:Content>

@@ -18,19 +18,21 @@ namespace JugandoConNorthWind.Empleados
         byte[] arregloImagen;
         List<string> errores = new List<string>();
         DropDownList[] ListaSelects;
-        
+        public Employees empleado = new Employees();
+
         protected void Page_Load(object sender, EventArgs e)
         {
-            GridListaEmpleados.DataSource = _empCRUD.ListaEmpleados();
-            GridListaEmpleados.DataBind();
             EjecutarModel.Text = "";
+            EjecutarModelDetalle.Text = "";
             ToastrLiteral.Text = "";
             AvisoModalsControl.mensajeAviso = "Esta a punto de eliminar un empleado, esta seguro de ello?";
             AvisoModalsControl.UserControlButtonClicked += new EventHandler(eliminandoEmpleado);
-            GridListaEmpleados.PageIndex = 0;
 
             if (!IsPostBack)
             {
+                GridListaEmpleados.DataSource = _empCRUD.ListaEmpleados();
+                GridListaEmpleados.DataBind();
+
                 CargarCombos();
 
                 HelperFechas.DefinirFechaPredefinida(Convert.ToDateTime(DateTime.Now),
@@ -251,6 +253,13 @@ namespace JugandoConNorthWind.Empleados
             selectDias2.CargarDias();
             selectMeses2.CargarMeses();
             selectAnios2.CargarAnios();
+        }
+
+        protected void cellClick(object sender, CommandEventArgs e)
+        {
+            string empleadoID = e.CommandArgument.ToString();
+            empleado = _empCRUD.ObtenerEmpleado(empleadoID);
+            EjecutarModelDetalle.Text = "<script>$('#modalDetalleEmpleado').modal('toggle');</script>";
         }
     }
 }

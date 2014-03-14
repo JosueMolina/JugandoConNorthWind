@@ -225,15 +225,6 @@ body {
 	height: 100%;
 }
 
-.container.perfilUsuario
-{
-    height: 10em;
-}
-
- .row, .col-sm-12, .col-sm-8, .col-sm-4, .col-sm-9, .col-sm-10
-{
-    height: 100%;
-}
 
 #NombreEmpleado
 {
@@ -243,7 +234,6 @@ body {
 #Nombres
 {
     padding: 0 15px;
-    line-height: 0.3em;
 
 }
 
@@ -257,4 +247,26 @@ body {
     background: #202427;
     padding: 5px 20px;
 }
+
+.cellAnchor:hover
+{
+    text-decoration: none;
+}
+
+tr.paginator td > a
+{
+    color: #fff;
+}
+
+td > a
+{
+    color: #C8C8C8;
+    display: block; 
+}
+
+ td > a:hover, tr:hover td > a
+ {
+    text-decoration: none;
+    color: #fff;
+ }
 
